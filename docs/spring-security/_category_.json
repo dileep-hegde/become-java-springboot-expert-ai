@@ -1,0 +1,8 @@
+{
+  "label": "Spring Security",
+  "position": 20,
+  "link": {
+    "type": "doc",
+    "id": "spring-security-index"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "Spring Boot",
+  "position": 18,
+  "link": {
+    "type": "doc",
+    "id": "spring-boot-index"
+  }
+}
