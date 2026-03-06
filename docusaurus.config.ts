@@ -37,7 +37,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/dileep-hegde/become-java-springboot-expert-ai/edit/main/become-java-springboot-expert-ai/',
+          editUrl: 'https://github.com/dileep-hegde/become-java-springboot-expert-ai/edit/main/',
           showLastUpdateTime: true,
           showLastUpdateAuthor: false,
           tagsBasePath: 'tags',
