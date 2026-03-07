@@ -82,6 +82,7 @@ const config: Config = {
       logo: {
         alt: 'DevReference Logo',
         src: 'img/logo.svg',
+        srcDark: 'img/logo-dark.svg',
       },
       items: [
         {
