@@ -16,11 +16,10 @@ last_updated: 2026-03-07
 
 ## Domain Overview Pages
 
-Overview pages are being added as domains are populated. Planned coverage:
-
 | Domain | What It Covers |
 |--------|----------------|
-| Java Core Overview | Variables, OOP, type system, collections, streams, concurrency at a glance. |
+| [Core Java Overview](./core-java-overview.md) | Variables, type system, collections, streams, concurrency at a glance. |
+| [OOP Overview](./oops-overview.md) | Classes, encapsulation, inheritance, polymorphism, abstraction, records, sealed classes. |
 | JVM Overview | Memory model, GC algorithms, class loading, JIT — tuning flags and diagnostics. |
 | Spring Framework Overview | IoC, DI, AOP, bean lifecycle, scopes — key APIs and annotations. |
 | Spring Boot Overview | Auto-configuration, starters, profiles, Actuator, testing slices. |
