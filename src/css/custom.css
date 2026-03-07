@@ -101,3 +101,7 @@ code {
 [data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
   background: #475569;
 }
+
+.menu__list .hidden {
+  display: none;
+}
