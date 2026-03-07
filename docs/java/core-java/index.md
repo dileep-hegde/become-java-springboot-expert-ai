@@ -15,26 +15,26 @@ last_updated: 2026-03-07
 
 ## What You'll Find Here
 
-Notes are being added. Planned topics:
-
 | Topic | Description |
 |-------|-------------|
-| Variables & Data Types | The 8 primitive types, literals, constants, and `final`. |
-| Type Conversion | Widening vs. narrowing casts, implicit promotion in expressions. |
-| Operators & Expressions | Arithmetic, bitwise, logical, ternary, and `instanceof` operators. |
-| Control Flow | `if/else`, `switch` expressions (Java 14+), `for`, `while`, `do-while`. |
-| Arrays | Single and multi-dimensional arrays, `Arrays` utility class. |
-| Strings | Immutability, string pool, `StringBuilder`, string APIs. |
-| Methods | Signatures, overloading, varargs, pass-by-value, recursion. |
-| Packages & Imports | Package structure, imports, classpath basics. |
+| [Variables & Data Types](./variables-and-data-types.md) | The 8 primitive types, literals, `var` inference, constants, and `final`. |
+| [Type Conversion](./type-conversion.md) | Widening vs. narrowing casts, implicit numeric promotion in expressions. |
+| [Operators & Expressions](./operators-and-expressions.md) | Arithmetic, bitwise, logical, ternary, and `instanceof` operators. |
+| [Control Flow](./control-flow.md) | `if/else`, `switch` expressions (Java 14+), `for`, `while`, `do-while`. |
+| [Arrays](./arrays.md) | Single and multi-dimensional arrays, `Arrays` utility class. |
+| [Strings](./strings.md) | Immutability, string pool, `StringBuilder`, and core String APIs. |
+| [Methods](./methods.md) | Signatures, overloading, varargs, pass-by-value, recursion. |
+| [Packages & Imports](./packages-and-imports.md) | Package structure, imports, classpath basics, and access modifiers. |
 
 ## Learning Path
 
-1. Start with **Variables & Data Types** — understand what the JVM can store before anything else.
-2. Move to **Operators & Expressions** — arithmetic, bitwise, and logical operators power every algorithm.
-3. Cover **Control Flow** — branching and loops are the skeleton of every method.
-4. Study **Strings** — `String`, `StringBuilder`, and string formatting are used in every program.
-5. Finish with **Methods** and **Arrays** before moving to [Object-Oriented Programming](../oops/index.md).
+1. Start with **[Variables & Data Types](./variables-and-data-types.md)** — understand what the JVM can store before anything else.
+2. Move to **[Type Conversion](./type-conversion.md)** — learn how Java promotes and casts between types.
+3. Cover **[Operators & Expressions](./operators-and-expressions.md)** — arithmetic, bitwise, and logical operators power every algorithm.
+4. Study **[Control Flow](./control-flow.md)** — branching and loops are the skeleton of every method.
+5. Read **[Arrays](./arrays.md)** — fixed-size collections and the foundation of higher-level data structures.
+6. Study **[Strings](./strings.md)** — `String`, `StringBuilder`, and string formatting are used in every program.
+7. Finish with **[Methods](./methods.md)** and **[Packages & Imports](./packages-and-imports.md)** before moving to [Object-Oriented Programming](../oops/index.md).
 
 ## Related Domains
 
