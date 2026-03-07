@@ -23,43 +23,57 @@ This is a personal knowledge base and interview-prep resource for Java backend e
 
 ---
 
-## Domains Covered (33 total)
+## Domains Covered (34 total)
 
 | # | Domain | Focus |
 |---|--------|-------|
 | 1 | Overviews | Quick-reference summaries for rapid revision |
-| 2 | Core Java | Variables, types, operators, control flow |
-| 3 | OOP | Classes, inheritance, polymorphism, interfaces |
-| 4 | Java Type System | Generics, autoboxing, type erasure, wildcards |
-| 5 | Core APIs | Object, String, Math, wrapper classes |
-| 6 | Collections Framework | List, Set, Map, iterators, Comparable/Comparator |
-| 7 | Exceptions | Checked/unchecked, custom exceptions, best practices |
-| 8 | Functional Programming | Lambdas, Streams API, method references |
-| 9 | Multithreading | Threads, concurrency utilities, virtual threads |
-| 10 | I/O & NIO | File handling, streams, serialization |
-| 11 | JVM Internals | Memory, GC, class loading, JIT |
-| 12 | Annotations | Built-in, custom, meta-annotations |
-| 13 | Java Modules | Java 9+ modules, module-info.java |
-| 14 | Java Evolution | New features: Java 8, 11, 17, 21 |
-| 15 | Design Patterns | GoF patterns in Java |
-| 16 | DSA | Data structures, algorithms, complexity |
-| 17 | Spring Framework | IoC, DI, ApplicationContext, AOP |
-| 18 | Spring Boot | Auto-config, starters, beans, actuators |
-| 19 | Spring Data | JPA, repositories, transactions, caching |
-| 20 | Spring Security | Auth, OAuth2, JWT, filter chains |
-| 21 | Web & REST | HTTP, MVC, WebFlux, OpenAPI |
-| 22 | Messaging | Kafka, RabbitMQ, async patterns |
-| 23 | Databases | SQL, NoSQL, Flyway/Liquibase, HikariCP |
-| 24 | Testing | JUnit 5, Mockito, Testcontainers |
-| 25 | Build Tools | Maven, Gradle |
-| 26 | Version Control | Git internals, branching, workflows |
-| 27 | Docker | Containerization, Dockerfile, Compose |
-| 28 | Kubernetes | Pods, services, deployments, Helm |
-| 29 | Cloud | AWS/GCP/Azure, cloud-native patterns |
-| 30 | DevOps | CI/CD, pipelines, observability |
-| 31 | System Design | Microservices, SOLID, architecture |
-| 32 | Cheatsheets | Quick reference for collections, concurrency, streams |
-| 33 | Interview Prep | Consolidated Q&A per domain |
+| 2 | Java Language & JVM | Hub page for all Java language & JVM subdomains |
+| 3 | Core Java | Variables, types, operators, control flow |
+| 4 | OOP | Classes, inheritance, polymorphism, interfaces |
+| 5 | Java Type System | Generics, autoboxing, type erasure, wildcards |
+| 6 | Core APIs | Object, String, Math, wrapper classes |
+| 7 | Collections Framework | List, Set, Map, iterators, Comparable/Comparator |
+| 8 | Exceptions | Checked/unchecked, custom exceptions, best practices |
+| 9 | Functional Programming | Lambdas, Streams API, method references |
+| 10 | Multithreading | Threads, concurrency utilities, virtual threads |
+| 11 | I/O & NIO | File handling, streams, serialization |
+| 12 | JVM Internals | Memory, GC, class loading, JIT |
+| 13 | Annotations | Built-in, custom, meta-annotations |
+| 14 | Java Modules | Java 9+ modules, module-info.java |
+| 15 | Java Evolution | New features: Java 8, 11, 17, 21 |
+| 16 | Design Patterns | GoF patterns in Java |
+| 17 | Cheatsheets | Quick reference for collections, concurrency, streams |
+| 18 | DSA | Data structures, algorithms, complexity |
+| 19 | Spring Framework | IoC, DI, ApplicationContext, AOP |
+| 20 | Spring Boot | Auto-config, starters, beans, actuators |
+| 21 | Spring Data | JPA, repositories, transactions, caching |
+| 22 | Spring Security | Auth, OAuth2, JWT, filter chains |
+| 23 | Web & REST | HTTP, MVC, WebFlux, OpenAPI |
+| 24 | Messaging | Kafka, RabbitMQ, async patterns |
+| 25 | Databases | SQL, NoSQL, Flyway/Liquibase, HikariCP |
+| 26 | Testing | JUnit 5, Mockito, Testcontainers |
+| 27 | Build Tools | Maven, Gradle |
+| 28 | Version Control | Git internals, branching, workflows |
+| 29 | Docker | Containerization, Dockerfile, Compose |
+| 30 | Kubernetes | Pods, services, deployments, Helm |
+| 31 | Cloud | AWS/GCP/Azure, cloud-native patterns |
+| 32 | DevOps | CI/CD, pipelines, observability |
+| 33 | System Design | Microservices, SOLID, architecture |
+| 34 | Interview Prep | Consolidated Q&A per domain |
+
+---
+
+## Current State
+
+All domain entry pages are published and navigable. Topic notes are actively being authored.
+
+| Artifact | Status |
+|----------|--------|
+| Domain entry pages (`index.md`) | 34 / 34 ✅ |
+| Domain overview pages (`docs/overviews/`) | 0 / 34 — written after topic notes |
+| Per-domain interview Q&A pages | 0 / 34 — written after topic notes |
+| Individual topic notes | 0 / ~200 — in progress |
 
 ---
 
@@ -102,11 +116,21 @@ npm run clear
 ```
 become-java-springboot-expert-ai/
 ├── docs/
-│   ├── overviews/             # Quick-reference overview pages
-│   ├── core-java/             # Core Java language fundamentals
+│   ├── overviews/             # Quick-reference summaries per domain
+│   ├── java/                  # Java language & JVM hub
+│   │   ├── core-java/         # Core language fundamentals
+│   │   ├── oops/              # OOP principles
+│   │   ├── multithreading/    # Concurrency & virtual threads
+│   │   └── ...               # 15 Java subdomains total
 │   ├── spring-boot/           # Spring Boot notes
-│   ├── ...                    # 33 domains total
-│   └── interview-prep/        # Interview Q&A
+│   ├── ...                    # 34 domains total
+│   └── interview-prep/        # Consolidated interview Q&A
+├── .github/
+│   ├── copilot-instructions.md  # Always-on workspace rules
+│   ├── instructions/            # Context-sensitive rules (5 files)
+│   ├── prompts/                 # Slash commands (5 prompts)
+│   ├── agents/                  # Specialized personas (3 agents)
+│   └── skills/                  # On-demand workflows (2 skills)
 ├── src/
 │   ├── pages/index.tsx        # Homepage (hero, stats, domain cards)
 │   └── css/custom.css         # Global theme & teal color palette

@@ -25,18 +25,21 @@ This guide explains every customization file in `.github/` — what each one doe
 │   ├── note-writer.agent.md
 │   ├── content-verifier.agent.md
 │   └── docusaurus-maintainer.agent.md
+├── checklists/                      ← audit checklists and inventory files
 └── skills/                          ← on-demand workflows with bundled references
     ├── note-scaffolder/
     │   ├── SKILL.md
     │   └── references/
     │       ├── note-template.md
+    │       ├── demo-template.md
     │       └── frontmatter-guide.md
     └── docusaurus-ops/
         ├── SKILL.md
         └── references/
             ├── setup-commands.md
             ├── category-template.md
-            └── docusaurus-config.md
+            ├── docusaurus-config.md
+            └── domain-topics-reference.md
 ```
 
 ---
@@ -44,7 +47,7 @@ This guide explains every customization file in `.github/` — what each one doe
 ## Quick Decision Guide
 
 **"I want to write a new note"** → Use the `note-writer` agent or `/new-note` prompt  
-**"I want a cheatsheet for an entire domain"** → Use the `/overview-page` prompt  
+**"I want a quick-reference overview for a domain"** → Use the `/overview-page` prompt  
 **"I want interview Q&A for a domain"** → Use the `/interview-prep` prompt  
 **"I want to set up Docusaurus / add a new domain folder"** → Use `docusaurus-maintainer` agent or `/docusaurus-new-domain` prompt  
 **"I want to check if my notes are accurate"** → Use the `content-verifier` agent  
@@ -65,7 +68,7 @@ Instructions are loaded automatically based on which file you're working with. Y
 | `new-note.instructions.md` | When you ask to write or edit a note under `docs/` |
 | `overview-page.instructions.md` | Automatically for any file in `docs/overviews/` |
 | `interview-prep.instructions.md` | Automatically for any file in `docs/interview-prep/` |
-| `docusaurus.instructions.md` | Automatically for `docusaurus.config.js`, `sidebars.js`, `_category_.json`, `package.json` |
+| `docusaurus.instructions.md` | Automatically for `docusaurus.config.ts`, `sidebars.ts`, `_category_.json`, `package.json` |
 | `diagrams.instructions.md` | When you ask to create a diagram in any note |
 
 ### Example: Rules Are Applied Without Lifting a Finger
@@ -91,7 +94,7 @@ Prompts appear as slash commands. Type `/` in the Copilot chat to see the list.
 
 **How to invoke**:
 ```
-/new-note Virtual Threads in multithreading
+/new-note Virtual Threads in java/multithreading
 ```
 or just:
 ```
@@ -100,12 +103,12 @@ or just:
 and Copilot will ask which topic and domain.
 
 **What it does**:
-1. Reads the `docs/multithreading/` folder to find the next `sidebar_position`
+1. Reads the `docs/java/multithreading/` folder to find the next `sidebar_position`
 2. Identifies 2–3 existing notes for cross-links
 3. Researches the topic against official docs
 4. Writes every mandatory section in the correct order
-5. Creates the file at `docs/multithreading/virtual-threads.md`
-6. Updates `docs/multithreading/index.md` learning path
+5. Creates the file at `docs/java/multithreading/virtual-threads.md`
+6. Updates `docs/java/multithreading/index.md` learning path
 
 **Example session**:
 ```
@@ -142,11 +145,11 @@ Copilot: [creates docs/spring-data/transactional-annotation.md with full content
 
 **How to invoke**:
 ```
-/interview-prep multithreading
+/interview-prep java/multithreading
 ```
 
 **What it does**:
-1. Pulls every question from `docs/multithreading/` notes
+1. Pulls every question from `docs/java/multithreading/` notes
 2. Identifies gaps in coverage
 3. Generates `docs/interview-prep/multithreading-interview-prep.md`
 4. Questions grouped: Beginner / Intermediate / Advanced
@@ -173,10 +176,10 @@ Copilot: [creates docs/spring-data/transactional-annotation.md with full content
 ```
 You: /docusaurus-new-domain
 Copilot: Domain folder name?
-You: system-design
+You: spring-cloud
 Copilot: Category label?
-You: System Design
-Copilot: [creates all 3 files at position 31]
+You: Spring Cloud
+Copilot: [creates all 3 files at position 35]
 ```
 
 ---
@@ -212,7 +215,7 @@ Agents are invoked from the **agent picker** (the model selector dropdown in Cop
 
 **How to invoke**: Select `note-writer` from the agent picker, then type naturally:
 ```
-Write a note on Spring Security's filter chain for spring-security domain
+Write a note on Spring Security's filter chain for the spring-security domain
 ```
 
 **What makes it different from the default agent**:
@@ -220,16 +223,18 @@ Write a note on Spring Security's filter chain for spring-security domain
 - It always researches before writing — no hallucinated API behavior
 - It proactively asks about cross-links and adds `## Related Notes`
 - It creates the file and updates `index.md` in one go
+- After writing, it asks if you want a **demo page** created with step-by-step runnable examples
+- After writing, it offers to regenerate the domain overview page to include the new note
 
 **Example multi-turn session**:
 ```
 You: [note-writer agent selected]
      Write a note on Java's CompletableFuture for the multithreading domain
 
-Agent: [checks docs/multithreading/ for sidebar position]
+Agent: [checks docs/java/multithreading/ for sidebar position]
        [researches on dev.java and baeldung]
        [writes full note with Mermaid diagram of async pipeline]
-       [creates docs/multithreading/completable-future.md]
+       [creates docs/java/multithreading/completable-future.md]
        
 You: Now add a comparison table between CompletableFuture and Virtual Threads
 
@@ -244,7 +249,7 @@ Agent: [adds ## Comparison section and updates the file]
 
 **How to invoke**: Select `content-verifier` from the agent picker:
 ```
-Verify docs/jvm-internals/garbage-collection.md
+Verify docs/java/jvm-internals/garbage-collection.md
 ```
 
 **What it does**:
@@ -258,8 +263,9 @@ Verify docs/jvm-internals/garbage-collection.md
 **Example output**:
 ```
 ✅ "G1GC became default in Java 9" — verified against dev.java
-❌ "@Transactional defaults to REQUIRED propagation" — INCORRECT
-   Correct: default is REQUIRED. Source: https://docs.spring.io/...
+❌ "@Transactional rolls back on checked exceptions by default" — INCORRECT
+   Correct: @Transactional only rolls back on unchecked exceptions (RuntimeException/Error) by default.
+   Source: https://docs.spring.io/...
 ⚠️ "Spring uses CGLIB for all proxies" — partially correct
    Full picture: Spring uses JDK dynamic proxies for interface-based beans
                  and CGLIB for class-based. Source: https://docs.spring.io/...
@@ -285,7 +291,7 @@ Add sidebar position 19 for a new spring-data domain
 ```
 
 **What it does**:
-- Only touches config files, `_category_.json`, `sidebars.js`, `docusaurus.config.js`
+- Only touches config files, `_category_.json`, `sidebars.ts`, `docusaurus.config.ts`
 - Runs `npm run build` to verify changes
 - **Never touches** note content or frontmatter
 
@@ -305,7 +311,7 @@ Skills appear as slash commands alongside prompts. Type `/` to see them.
 ```
 
 **What makes it different from `/new-note`**:
-- Explicitly walks through 6 steps: gather inputs → check domain context → research → build → create file → update index
+- Explicitly walks through 7 steps: gather inputs → check domain context → research → build → create file → create demo page (optional) → update index
 - References the bundled `note-template.md` and `frontmatter-guide.md` for precise structure
 - Best for topics you're unfamiliar with (more guided) vs. `/new-note` which moves faster
 
@@ -329,7 +335,7 @@ Skills appear as slash commands alongside prompts. Type `/` to see them.
 /docusaurus-ops enable search plugin
 ```
 
-**What it does**: Loads the full `docusaurus-config.md`, `setup-commands.md`, and `category-template.md` references, then executes the requested operation with complete accuracy.
+**What it does**: Loads the full `docusaurus-config.md`, `setup-commands.md`, `category-template.md`, and `domain-topics-reference.md` references, then executes the requested operation with complete accuracy.
 
 ---
 
@@ -425,7 +431,7 @@ Goal: Add a new note, then update all related artifacts.
 ```
 Step 1: /new-note
         "CompletableFuture in multithreading"
-        → Note created, docs/multithreading/index.md updated
+        → Note created, docs/java/multithreading/index.md updated
 
 Step 2: /overview-page multithreading
         → Overview regenerated with new note included
@@ -447,7 +453,7 @@ Some primitives are useful as standalone, without a full workflow:
 | "What's the `_category_.json` format?" | Open `.github/skills/docusaurus-ops/references/category-template.md` |
 | "What npm commands do I need?" | Open `.github/skills/docusaurus-ops/references/setup-commands.md` |
 | "Show me a blank note template" | Open `.github/skills/note-scaffolder/references/note-template.md` |
-| "Fix my `docusaurus.config.js`" | [docusaurus-maintainer agent] or open `docusaurus-config.md` as reference |
+| "Fix my `docusaurus.config.ts`" | [docusaurus-maintainer agent] or open `docusaurus-config.md` as reference |
 | "What color should I use for a Spring component in a diagram?" | Instructions auto-apply; or read `diagrams.instructions.md` directly |
 | "What sections must a note have?" | Read `new-note.instructions.md` |
 
@@ -461,7 +467,7 @@ Some primitives are useful as standalone, without a full workflow:
 | `new-note.instructions.md` | Instruction | On-demand (task-based) |
 | `overview-page.instructions.md` | Instruction | `docs/overviews/**` files |
 | `interview-prep.instructions.md` | Instruction | `docs/interview-prep/**` files |
-| `docusaurus.instructions.md` | Instruction | Config + category files |
+| `docusaurus.instructions.md` | Instruction | `docusaurus.config.ts`, `sidebars.ts`, `_category_.json`, `package.json` |
 | `diagrams.instructions.md` | Instruction | On-demand (task-based) |
 | `new-note.prompt.md` | Prompt | `/new-note` |
 | `overview-page.prompt.md` | Prompt | `/overview-page` |
