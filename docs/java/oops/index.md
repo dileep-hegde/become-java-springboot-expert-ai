@@ -15,26 +15,24 @@ last_updated: 2026-03-07
 
 ## What You'll Find Here
 
-Notes are being added. Planned topics:
-
 | Topic | Description |
 |-------|-------------|
-| Classes & Objects | Blueprints vs. instances — fields, methods, constructors, `this`. |
-| Encapsulation | Access modifiers, getters/setters, immutable classes. |
-| Inheritance | `extends`, method overriding, `super`, Liskov Substitution Principle. |
-| Polymorphism | Compile-time (overloading) vs. runtime (overriding) dispatch. |
-| Abstraction | Abstract classes vs. interfaces; when to use each. |
-| Records (Java 16+) | Concise immutable data carriers; compact constructors. |
-| Sealed Classes (Java 17+) | Restricted hierarchies enabling exhaustive `switch`. |
+| [Classes & Objects](./classes-and-objects.md) | Blueprints vs. instances — fields, methods, constructors, `this`. |
+| [Encapsulation](./encapsulation.md) | Access modifiers, getters/setters, immutable classes. |
+| [Inheritance](./inheritance.md) | `extends`, method overriding, `super`, Liskov Substitution Principle. |
+| [Polymorphism](./polymorphism.md) | Compile-time (overloading) vs. runtime (overriding) dispatch. |
+| [Abstraction](./abstraction.md) | Abstract classes vs. interfaces; when to use each. |
+| [Records (Java 16+)](./records.md) | Concise immutable data carriers; compact constructors. |
+| [Sealed Classes (Java 17+)](./sealed-classes.md) | Restricted hierarchies enabling exhaustive `switch`. |
 
 ## Learning Path
 
-1. **Classes & Objects** — understand the class/instance relationship and object construction.
-2. **Encapsulation** — learn to hide state and expose intent through controlled access.
-3. **Inheritance** — study when to extend vs. compose; the classic mistake is over-inheriting.
-4. **Polymorphism** — this is the concept most interviews probe with tricky overloading/overriding questions.
-5. **Abstraction** — distinguish abstract classes from interfaces; learn when `default` methods change the decision.
-6. Finish with **Records** and **Sealed Classes** — Java 17+ additions every modern Java developer needs.
+1. **[Classes & Objects](./classes-and-objects.md)** — understand the class/instance relationship and object construction.
+2. **[Encapsulation](./encapsulation.md)** — learn to hide state and expose intent through controlled access.
+3. **[Inheritance](./inheritance.md)** — study when to extend vs. compose; the classic mistake is over-inheriting.
+4. **[Polymorphism](./polymorphism.md)** — this is the concept most interviews probe with tricky overloading/overriding questions.
+5. **[Abstraction](./abstraction.md)** — distinguish abstract classes from interfaces; learn when `default` methods change the decision.
+6. **[Records (Java 16+)](./records.md)** and **[Sealed Classes (Java 17+)](./sealed-classes.md)** — Java 17+ additions every modern Java developer needs.
 
 ## Related Domains
 
