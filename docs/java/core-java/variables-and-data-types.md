@@ -91,7 +91,7 @@ flowchart LR
   end
   subgraph Heap
     direction TB
-    C["String object\n'Alice'"]
+    C["String object<br/>'Alice'"]
   end
   B -- points to --> C
 

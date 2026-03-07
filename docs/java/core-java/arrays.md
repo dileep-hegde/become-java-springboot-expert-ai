@@ -45,15 +45,15 @@ When you create `int[] arr = new int[5]`, the JVM:
 
 ```mermaid
 flowchart LR
-  REF["arr (stack reference)"] -- "&rarr;" --> HEAP
+  REF["arr (stack reference)"] --> HEAP
 
   subgraph HEAP["Heap — int[5]"]
     direction LR
-    E0["[0]\n0"]
-    E1["[1]\n0"]
-    E2["[2]\n0"]
-    E3["[3]\n0"]
-    E4["[4]\n0"]
+    E0["[0]<br/>0"]
+    E1["[1]<br/>0"]
+    E2["[2]<br/>0"]
+    E3["[3]<br/>0"]
+    E4["[4]<br/>0"]
   end
 
   classDef jvmClass fill:#007396,color:#fff,stroke:#005a75

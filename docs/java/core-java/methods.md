@@ -59,8 +59,8 @@ When a method is called, the JVM pushes a **stack frame** onto the current threa
 
 ```mermaid
 flowchart TD
-  MAIN["main() frame\nresult = ?"] -->|calls add(3,4)| ADD["add() frame\na=3, b=4"]
-  ADD -->|returns 7| MAIN
+  MAIN["main() frame<br/>result = ?"] -- "calls add(3,4)" --> ADD["add() frame<br/>a=3, b=4"]
+  ADD -- "returns 7" --> MAIN
   MAIN --> END([result = 7])
 
   classDef jvmClass fill:#007396,color:#fff,stroke:#005a75

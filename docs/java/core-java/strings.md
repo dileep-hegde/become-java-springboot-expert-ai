@@ -63,8 +63,8 @@ System.out.println(a.equals(c)); // true — same content
 
 ```mermaid
 flowchart LR
-  A["a → 'hello'"] & B["b → 'hello'"] --> POOL["String Pool\n'hello'"]
-  C["c → new String('hello')"] --> HEAP["Heap Object\n'hello'"]
+  A["a → 'hello'"] & B["b → 'hello'"] --> POOL["String Pool<br/>'hello'"]
+  C["c → new String('hello')"] --> HEAP["Heap Object<br/>'hello'"]
 
   classDef jvmClass fill:#007396,color:#fff,stroke:#005a75
   classDef userClass fill:#f5a623,color:#fff,stroke:#c77d00

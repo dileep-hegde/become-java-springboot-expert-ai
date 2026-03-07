@@ -126,9 +126,9 @@ com.example.service.UserService
 
 ```mermaid
 flowchart LR
-  SRC[Source: UserService.java\npackage com.example.service] --> COMPILER[javac]
-  COMPILER --> CLASS[UserService.class\nstored at com/example/service/]
-  CLASS --> CP[Classpath Entry:\nclasses/ or app.jar]
+  SRC["Source: UserService.java<br/>package com.example.service"] --> COMPILER[javac]
+  COMPILER --> CLASS["UserService.class<br/>stored at com/example/service/"]
+  CLASS --> CP["Classpath Entry:<br/>classes/ or app.jar"]
   CP --> CL[ClassLoader] --> JVM[JVM loads class]
 
   classDef jvmClass fill:#007396,color:#fff,stroke:#005a75
