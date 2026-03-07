@@ -7,21 +7,21 @@ import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 const STATS = [
-  {value: '33', label: 'Domains Covered'},
+  {value: '34', label: 'Domains Covered'},
   {value: 'Java 8 → 21', label: 'Version Coverage'},
   {value: '100+', label: 'Interview Questions'},
   {value: 'Free', label: 'Always & Forever'},
 ];
 
 const DOMAINS = [
-  {emoji: '☕', title: 'Core Java', desc: 'Variables, types, OOP fundamentals, control flow', to: '/docs/core-java/'},
-  {emoji: '🧩', title: 'OOP & Design Patterns', desc: 'SOLID, GoF patterns, inheritance, polymorphism', to: '/docs/oops/'},
+  {emoji: '☕', title: 'Core Java', desc: 'Variables, types, OOP fundamentals, control flow', to: '/docs/java/core-java/'},
+  {emoji: '🧩', title: 'OOP & Design Patterns', desc: 'SOLID, GoF patterns, inheritance, polymorphism', to: '/docs/java/oops/'},
   {emoji: '🍃', title: 'Spring Boot', desc: 'Auto-config, starters, beans, AOP, DI', to: '/docs/spring-boot/'},
   {emoji: '🗄️', title: 'Spring Data & JPA', desc: 'Repositories, transactions, query methods', to: '/docs/spring-data/'},
   {emoji: '🔒', title: 'Spring Security', desc: 'Auth, OAuth2, JWT, filter chains', to: '/docs/spring-security/'},
-  {emoji: '⚡', title: 'Multithreading', desc: 'Threads, concurrency, virtual threads (Java 21)', to: '/docs/multithreading/'},
-  {emoji: '🌊', title: 'Streams & Lambdas', desc: 'Functional programming, method references', to: '/docs/functional-programming/'},
-  {emoji: '🖥️', title: 'JVM Internals', desc: 'Memory, GC, class loading, JIT compilation', to: '/docs/jvm-internals/'},
+  {emoji: '⚡', title: 'Multithreading', desc: 'Threads, concurrency, virtual threads (Java 21)', to: '/docs/java/multithreading/'},
+  {emoji: '🌊', title: 'Streams & Lambdas', desc: 'Functional programming, method references', to: '/docs/java/functional-programming/'},
+  {emoji: '🖥️', title: 'JVM Internals', desc: 'Memory, GC, class loading, JIT compilation', to: '/docs/java/jvm-internals/'},
   {emoji: '🐳', title: 'Docker & Kubernetes', desc: 'Containerization, orchestration, Helm', to: '/docs/docker/'},
   {emoji: '🧪', title: 'Testing', desc: 'JUnit 5, Mockito, Testcontainers', to: '/docs/testing/'},
   {emoji: '🏗️', title: 'System Design', desc: 'Microservices, SOLID, architecture patterns', to: '/docs/system-design/'},
@@ -121,7 +121,7 @@ function DomainsSection(): ReactNode {
         </div>
         <div className={styles.browseAll}>
           <Link className={clsx('button button--lg', styles.btnOutline)} to="/docs/overviews/">
-            Browse All 33 Domains →
+            Browse All 34 Domains →
           </Link>
         </div>
       </div>
