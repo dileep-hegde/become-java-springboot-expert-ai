@@ -40,7 +40,7 @@ const config: Config = {
           editUrl: 'https://github.com/dileep-hegde/become-java-springboot-expert-ai/edit/main/',
           showLastUpdateTime: true,
           showLastUpdateAuthor: false,
-          tagsBasePath: 'tags',
+          tagsBasePath: 'tags',          
         },
         blog: false,
         theme: {
@@ -67,11 +67,17 @@ const config: Config = {
   ],
 
   themeConfig: {
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
       respectPrefersColorScheme: true,
     },
     navbar: {
+      hideOnScroll: true,      
       title: 'DevReference',
       logo: {
         alt: 'DevReference Logo',
