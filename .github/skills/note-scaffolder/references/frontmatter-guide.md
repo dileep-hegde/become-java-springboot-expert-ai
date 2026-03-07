@@ -116,10 +116,14 @@ sql, nosql, mongodb, redis, flyway
 
 - YAML list of URLs
 - Include at least one from the priority list:
-  1. `https://dev.java`
-  2. `https://docs.spring.io/spring-framework/reference`
-  3. `https://docs.spring.io/spring-boot/`
-  4. `https://www.baeldung.com`
+  1. `https://docs.oracle.com/javase/specs/` — Java Language Specification (JLS)
+  2. `https://docs.oracle.com/en/java/` — Oracle Java SE Documentation and Javadocs
+  3. `https://dev.java` — for Java language features (OpenJDK/dev.java)
+  4. `https://docs.oracle.com/en/java/javase/25/docs/api/index.html` — Oracle Java API docs (Java SE 25)
+  5. `https://docs.oracle.com/javase/tutorial/` — Oracle Java Tutorials (JDK 8)
+  6. `https://docs.spring.io/spring-framework/reference`
+  7. `https://docs.spring.io/spring-boot/`
+  8. `https://www.baeldung.com`
 - Include the direct page URL, not the homepage
 
 Example:

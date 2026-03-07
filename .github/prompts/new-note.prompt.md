@@ -27,9 +27,13 @@ Read `docs/<domain-path>/` to:
 
 ### Step 3: Research
 Verify facts using authoritative sources (in priority order):
-1. https://dev.java — for Java language features and APIs
-2. https://docs.spring.io — for Spring and Spring Boot
-3. https://www.baeldung.com — for practical examples and usage patterns
+1. https://docs.oracle.com/javase/specs/ — Java Language Specification (JLS)
+2. https://docs.oracle.com/en/java/ — Oracle Java SE Documentation and Javadocs
+3. https://dev.java — for Java language features and APIs (OpenJDK/dev.java)
+4. https://docs.oracle.com/en/java/javase/25/docs/api/index.html — Oracle Java API docs (Java SE 25)
+5. https://docs.oracle.com/javase/tutorial/ — Oracle Java Tutorials (JDK 8)
+6. https://docs.spring.io — for Spring and Spring Boot
+7. https://www.baeldung.com — for practical examples and usage patterns
 
 ## Writing the Note
 

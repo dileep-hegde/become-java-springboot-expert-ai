@@ -35,10 +35,14 @@ Read `docs/<domain-path>/`:
 
 ### Step 3: Research the Topic
 
-Search authoritative sources before writing:
-1. https://dev.java — for Java language features
-2. https://docs.spring.io — for Spring/Spring Boot features
-3. https://www.baeldung.com — for practical examples
+Search authoritative sources before writing (prioritize official and up-to-date sources):
+1. https://docs.oracle.com/javase/specs/ — Java Language Specification (JLS) — authoritative language spec
+2. https://docs.oracle.com/en/java/ — Oracle Java SE Documentation — official platform docs and Javadocs
+3. https://dev.java — for Java language features (OpenJDK/dev.java)
+4. https://docs.oracle.com/en/java/javase/25/docs/api/index.html — Oracle Java API docs (Java SE 25)
+5. https://docs.oracle.com/javase/tutorial/ — Oracle Java Tutorials (JDK 8)
+6. https://docs.spring.io — for Spring/Spring Boot features
+7. https://www.baeldung.com — for practical examples
 
 Collect at least one URL to populate `sources:` frontmatter.
 

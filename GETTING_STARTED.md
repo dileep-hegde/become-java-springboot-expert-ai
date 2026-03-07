@@ -232,7 +232,7 @@ You: [note-writer agent selected]
      Write a note on Java's CompletableFuture for the multithreading domain
 
 Agent: [checks docs/java/multithreading/ for sidebar position]
-       [researches on dev.java and baeldung]
+        [researches on authoritative sources such as the Java Language Specification (https://docs.oracle.com/javase/specs/), Oracle Java SE docs (https://docs.oracle.com/en/java/), dev.java (OpenJDK/dev.java), Oracle Java API (https://docs.oracle.com/en/java/javase/25/docs/api/index.html), Oracle Java Tutorials (https://docs.oracle.com/javase/tutorial/), and baeldung]
        [writes full note with Mermaid diagram of async pipeline]
        [creates docs/java/multithreading/completable-future.md]
        

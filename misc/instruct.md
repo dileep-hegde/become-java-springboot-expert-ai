@@ -8,7 +8,7 @@ Keep in mind:
 - Then, nearly 2 years of freelancing (not so aggressively, here and there) using no-code tools like framer and Webflow
 
 What I'm looking for in this project:
-- I want to gather information from authentic sources like dev.java, docs.telusko.com, baeldung and docs.spring.io/spring-framework/reference, other well-known sources and write detailed notes in markdown format for my personal use and interview preparation.
+- I want to gather information from authentic sources like the Java Language Specification and Oracle Java docs (JLS: https://docs.oracle.com/javase/specs/, Oracle Java SE: https://docs.oracle.com/en/java/), dev.java (OpenJDK), Oracle Java API (https://docs.oracle.com/en/java/javase/25/docs/api/index.html), Oracle Java Tutorials (https://docs.oracle.com/javase/tutorial/), docs.telusko.com, baeldung and docs.spring.io/spring-framework/reference, and other well-known sources; then write detailed notes in markdown format for personal use and interview preparation.
 - I want the notes to be well-structured, easy to understand, and include examples, diagrams , analogies where applicable.
 - I want notes in zettelkasten format, with links between related topics for better understanding and recall.
 - I want it as a docusaurus project, so that I can easily navigate through the notes and also host it online if needed.
