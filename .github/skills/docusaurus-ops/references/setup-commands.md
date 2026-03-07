@@ -1,111 +1,145 @@
 # Setup Commands Reference
 
-All npm/shell commands needed to bootstrap and maintain the Docusaurus project.
+All repo-specific npm/shell commands needed to run and maintain this Docusaurus site.
+
+This reference is tailored to this repository (`become-java-springboot-expert-ai`) and its `package.json` scripts and dependencies.
 
 ---
 
-## Bootstrap a New Project
+## Quick reference — scripts in this repo
+
+Check `package.json` for the canonical scripts. The main scripts available here are:
+
+- `npm start` — run the dev server (Docusaurus) at http://localhost:3000
+- `npm run build` — build the production site
+- `npm run serve` — serve the built site locally
+- `npm run clear` — clear Docusaurus caches (`.docusaurus/` and related caches)
+- `npm run deploy` — deploy (project must be configured for deployment)
+- `npm run swizzle` — swizzle Docusaurus components
+- `npm run typecheck` — run TypeScript typecheck (`tsc`)
+
+Example: start the dev server
 
 ```bash
-# Create new Docusaurus v3 project (classic preset, no TypeScript)
-npx create-docusaurus@latest exp-java-ai classic
-
-cd exp-java-ai
-
-# Remove scaffolded demo content
-Remove-Item -Recurse blog/            # PowerShell
-Remove-Item -Recurse docs/tutorial*/  # PowerShell
-# On Linux/Mac: rm -rf blog/ docs/tutorial*/
+npm start
 ```
 
 ---
 
-## Install Required Plugins
+## Install / verify environment
+
+This repo uses Docusaurus v3 and expects Node >= 20 (see `engines.node` in `package.json`). Install dependencies with:
 
 ```bash
-# Full-text search plugin
-npm install @easyops-cn/docusaurus-search-local
+npm install
+```
 
-# Mermaid diagram support (v3 built-in theme)
-npm install @docusaurus/theme-mermaid
+Verify required Docusaurus plugins present (this repo includes):
 
-# Verify installation
-npm list @docusaurus/core
+```bash
+npm list @docusaurus/core @docusaurus/preset-classic @docusaurus/theme-mermaid @easyops-cn/docusaurus-search-local
+```
+
+If you need to add the search or mermaid plugin locally, run:
+
+```bash
+npm install @easyops-cn/docusaurus-search-local @docusaurus/theme-mermaid
 ```
 
 ---
 
-## Dev Workflow
+## Dev workflow (common commands)
+
+- Start dev server (live reload):
 
 ```bash
-npm start                    # Start dev server at http://localhost:3000
-npm run build                # Full production build (runs broken-link checks)
-npm run serve                # Serve the built site locally (simulate production)
-npm run clear                # Delete .docusaurus/ and node_modules/.cache
-npm run clear ; npm start    # Fix stale styles or missing diagrams
+npm start
 ```
 
----
-
-## Diagnose Build Failures
-
-```powershell
-# PowerShell — capture build output and find broken links
-npm run build 2>&1 | Select-String "Broken link"
-npm run build 2>&1 | Select-String "Error"
-npm run build 2>&1 | Select-String "duplicate"
-```
+- Build production site:
 
 ```bash
-# Bash — same
-npm run build 2>&1 | grep -i "broken\|error\|duplicate"
-```
-
----
-
-## Update Dependencies
-
-```bash
-# Check for outdated packages
-npm outdated
-
-# Update Docusaurus to latest v3 patch
-npm install @docusaurus/core@latest @docusaurus/preset-classic@latest @docusaurus/theme-mermaid@latest
-
-# After major version updates, always run:
 npm run build
 ```
 
----
-
-## Deployment (GitHub Pages)
+- Serve the produced build locally:
 
 ```bash
-# Set environment variable (PowerShell)
-$env:GIT_USER = "your-github-username"
+npm run serve
+```
 
-# Deploy to GitHub Pages
+- Clear caches (use when builds are stale):
+
+```bash
+npm run clear
+```
+
+- Typecheck TypeScript sources:
+
+```bash
+npm run typecheck
+```
+
+---
+
+## Diagnose build errors
+
+Capture and search build output (PowerShell):
+
+```powershell
+npm run build 2>&1 | Select-String "Broken link|Error|duplicate"
+```
+
+Or on Bash/macOS/Linux:
+
+```bash
+npm run build 2>&1 | grep -Ei "broken|error|duplicate"
+```
+
+If build reports broken links, fix or add redirects in `docusaurus.config.ts` or the affected Markdown files.
+
+---
+
+## Deployment notes
+
+This repo includes a `deploy` script but deployment requires Docusaurus deployment config (`organizationName`, `projectName`, and `deploymentBranch`) in `docusaurus.config.ts` if using GitHub Pages. Typical deploy command:
+
+```bash
 npm run deploy
 ```
 
-This requires `organizationName`, `projectName`, and `deploymentBranch` set in `docusaurus.config.ts`.
+If you use GitHub Actions or another CI, prefer running `npm run build` and publishing the `build/` output via your CI pipeline.
 
 ---
 
-## File Structure After Bootstrap
+## Helpful commands & troubleshooting
 
+- Show outdated packages:
+
+```bash
+npm outdated
 ```
-exp-java-ai/
-├── docs/                       # All markdown notes
-│   ├── overviews/              # Quick-reference overview pages
-│   ├── core-java/              # Domain folders...
-│   └── ...
-├── src/
-│   └── css/
-│       └── custom.css          # Custom styles
-├── static/
-│   └── img/                    # Images and SVGs
-├── docusaurus.config.ts        # Main config
-├── sidebars.ts                 # Sidebar (auto-generated)
-└── package.json
+
+- Update Docusaurus core/plugins (v3 patch updates):
+
+```bash
+npm install @docusaurus/core@latest @docusaurus/preset-classic@latest @docusaurus/theme-mermaid@latest
+npm run build
 ```
+
+- If styles or Mermaid diagrams appear stale, try clearing caches then restarting:
+
+```bash
+npm run clear
+npm start
+```
+
+---
+
+## Notes specific to this repo
+
+- Node requirement: `node >= 20` (see `package.json`).
+- The repo already includes `@easyops-cn/docusaurus-search-local` and `@docusaurus/theme-mermaid` in `dependencies`.
+- Use `npm start` for local editing and `npm run build` to validate the site for publishing.
+
+If you'd like, I can also update other `.github` docs or add a short checklist for releasing changes — tell me which you'd prefer next.
