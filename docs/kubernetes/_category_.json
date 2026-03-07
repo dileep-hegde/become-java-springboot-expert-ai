@@ -1,6 +1,6 @@
 {
   "label": "Kubernetes",
-  "position": 28,
+  "position": 15,
   "link": {
     "type": "doc",
     "id": "kubernetes-index"
