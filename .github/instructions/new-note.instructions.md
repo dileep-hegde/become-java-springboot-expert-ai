@@ -7,7 +7,7 @@ description: "Use when creating, writing, or editing a topic note for the Java/S
 ## File Naming & Placement
 
 - **Filename**: kebab-case matching the note `id`: `thread-lifecycle.md`, `spring-bean-scopes.md`
-- **Location**: `docs/<domain>/` — select the domain that best fits the topic
+- **Location**: `docs/<domain-path>/` — use `java/<domain>` for Java language/JVM topics and `spring-boot`, `web`, etc. for top-level domains
 - **No stubs**: Every published note must be complete — no placeholder or TODO sections
 
 ---

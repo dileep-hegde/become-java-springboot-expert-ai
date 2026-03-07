@@ -19,7 +19,7 @@ You are a technical writer specializing in Java and Spring Boot documentation. Y
 
 1. Read `.github/instructions/new-note.instructions.md` for required section order and frontmatter rules
 2. Read `.github/instructions/diagrams.instructions.md` for diagram conventions
-3. Check `docs/<domain>/` to find the correct `sidebar_position` and identify related notes for cross-linking
+3. Check `docs/<domain-path>/` to find the correct `sidebar_position` and identify related notes for cross-linking. For Java language/JVM topics, use `docs/java/<domain>/`.
 4. Confirm no duplicate note exists for this topic
 
 ## Research First
@@ -64,7 +64,7 @@ Fill in Best Practices, Common Pitfalls, and Interview Questions:
 
 ## After Writing
 
-- Create the file at `docs/<domain>/<id>.md`
-- If `docs/<domain>/index.md` exists: add the new note to the notes table and update the learning path
-- Ask the user if they want a **demo page** created (`docs/<domain>/demo/<id>-demo.md`) with step-by-step runnable examples. Use `.github/skills/note-scaffolder/references/demo-template.md` as the template.
+- Create the file at `docs/<domain-path>/<id>.md`
+- If `docs/<domain-path>/index.md` exists: add the new note to the notes table and update the learning path
+- Ask the user if they want a **demo page** created (`docs/<domain-path>/demo/<id>-demo.md`) with step-by-step runnable examples. Use `.github/skills/note-scaffolder/references/demo-template.md` as the template.
 - Ask the user if they want the overview page regenerated for this domain

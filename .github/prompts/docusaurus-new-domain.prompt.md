@@ -1,6 +1,6 @@
 ---
-description: "Scaffold all required files for a new documentation domain: _category_.json, index.md, and an overview page stub. Use when adding a new top-level category to the docs/ folder."
-argument-hint: "Domain name and label — e.g., 'spring-data Spring Data JPA' or 'messaging Messaging & Events'"
+description: "Scaffold all required files for a new documentation domain: _category_.json, index.md, and an overview page stub. Use when adding a top-level category or a Java subdomain."
+argument-hint: "Domain path and label — e.g., 'spring-data Spring Data JPA' or 'java/multithreading Multithreading & Concurrency'"
 tools: [read, edit, search]
 ---
 
@@ -9,20 +9,20 @@ Scaffold all required files for a new documentation domain.
 ## Required Input
 
 Ask the user for (if not provided in the argument):
-1. **Domain folder name** — kebab-case directory under `docs/`, e.g., `spring-data`
+1. **Domain path** — folder under `docs/`, e.g., `spring-data` or `java/multithreading`
 2. **Category label** — human-readable sidebar label, e.g., `Spring Data`
 3. **Sidebar position** — integer; reference the position table in `.github/instructions/docusaurus.instructions.md`
 4. **Description** — 2–3 sentences summarizing what this domain covers
 
 ## Pre-Flight Checks
 
-1. Verify `docs/<domain>/` does not already exist
+1. Verify `docs/<domain-path>/` does not already exist
 2. Check that the sidebar position does not conflict with existing `_category_.json` files
 3. Confirm the `id` for `index.md` will be `<domain>-index` (matches `_category_.json` link)
 
 ## Files to Create
 
-### File 1: `docs/<domain>/_category_.json`
+### File 1: `docs/<domain-path>/_category_.json`
 
 ```json
 {
@@ -35,7 +35,7 @@ Ask the user for (if not provided in the argument):
 }
 ```
 
-### File 2: `docs/<domain>/index.md`
+### File 2: `docs/<domain-path>/index.md`
 
 Full domain index with frontmatter, the provided description, an empty notes table, and a placeholder learning path.
 
@@ -116,7 +116,7 @@ last_updated: YYYY-MM-DD
 ## Post-Scaffold
 
 Inform the user:
-- Domain is scaffolded at `docs/<domain>/`
+- Domain is scaffolded at `docs/<domain-path>/`
 - Run `npm start` to verify the new category appears in the sidebar
 - Use the `new-note` prompt to add the first note to this domain
 - Run the `overview-page` prompt after adding notes to populate the overview

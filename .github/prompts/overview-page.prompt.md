@@ -1,6 +1,6 @@
 ---
 description: "Create or regenerate the overview and quick-reference page for a documentation domain. Use when starting a new domain or after adding notes to update the overview."
-argument-hint: "Domain folder name — e.g., 'spring-boot', 'multithreading', 'collections-framework'"
+argument-hint: "Domain path — e.g., 'spring-boot', 'java/multithreading', 'java/collections-framework'"
 tools: [read, search, edit]
 ---
 
@@ -8,13 +8,13 @@ Create or update the overview and quick-reference pages for a documentation doma
 
 ## Required Input
 
-User provides the **domain folder name** (e.g., `spring-boot`, `multithreading`). Ask if not provided.
+User provides the **domain path** (e.g., `spring-boot`, `java/multithreading`). Ask if not provided.
 
 ## Steps
 
 ### Step 1: Inventory the Domain
 
-Read every file in `docs/<domain>/`:
+Read every file in `docs/<domain-path>/`:
 - Collect each note's `id`, `title`, `description`, `sidebar_position`, and `tags`
 - Extract the key concepts mentioned in `## What Is It?` and `## How It Works`
 - Pull important APIs, annotations, and commands from `## Code Examples`
@@ -31,7 +31,7 @@ Follow the structure in `.github/instructions/overview-page.instructions.md`:
 5. **Top 5 Interview Questions**: pull the most important from the domain notes; write concise 2–4 sentence answers
 6. **All Notes in This Domain**: table listing every note with its one-line description
 
-### Step 3: Update `docs/<domain>/index.md`
+### Step 3: Update `docs/<domain-path>/index.md`
 
 If `index.md` exists:
 - Add any notes missing from the notes table
@@ -50,4 +50,4 @@ If `index.md` does not exist, create it following the template in `.github/instr
 ## Output
 
 - `docs/overviews/<domain>-overview.md` — created or updated
-- `docs/<domain>/index.md` — updated to reflect current note inventory
+- `docs/<domain-path>/index.md` — updated to reflect current note inventory

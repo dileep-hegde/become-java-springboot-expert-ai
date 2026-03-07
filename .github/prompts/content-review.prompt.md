@@ -1,6 +1,6 @@
 ---
 description: "Review existing notes in a domain or specific files for content accuracy, structural compliance, completeness, valid cross-links, and outdated information. Use before publishing or after a Java/Spring Boot version update."
-argument-hint: "Domain folder or file path(s) to review — e.g., 'docs/spring-boot/' or 'docs/multithreading/thread-lifecycle.md'"
+argument-hint: "Domain folder or file path(s) to review — e.g., 'docs/spring-boot/' or 'docs/java/multithreading/thread-lifecycle.md'"
 tools: [read, search, edit, web]
 ---
 
@@ -10,7 +10,7 @@ Review notes for quality and compliance with project standards.
 
 User specifies one of:
 - A domain folder: `docs/spring-boot/`
-- A specific file: `docs/multithreading/thread-lifecycle.md`
+- A specific file: `docs/java/multithreading/thread-lifecycle.md`
 - Multiple files
 
 ## Review Checklist

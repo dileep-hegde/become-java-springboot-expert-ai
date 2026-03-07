@@ -1,6 +1,6 @@
 ---
 description: "Generate or expand a consolidated interview preparation page for a Java/Spring Boot domain. Aggregates Q&A from domain notes and supplements with real-world interview questions."
-argument-hint: "Domain to generate interview prep for — e.g., 'spring-security', 'multithreading', 'spring-boot'"
+argument-hint: "Domain to generate interview prep for — e.g., 'spring-security', 'java/multithreading', 'spring-boot'"
 tools: [read, search, edit]
 ---
 
@@ -9,15 +9,15 @@ Generate a consolidated interview preparation page for the specified domain.
 ## Required Input
 
 User provides the **domain name**. If missing, ask which domain:
-`core-java`, `oops`, `collections-framework`, `multithreading`, `functional-programming`,
-`jvm-internals`, `spring-framework`, `spring-boot`, `spring-data`, `spring-security`,
+`java/core-java`, `java/oops`, `java/collections-framework`, `java/multithreading`, `java/functional-programming`,
+`java/jvm-internals`, `spring-framework`, `spring-boot`, `spring-data`, `spring-security`,
 `web`, `databases`, `testing`, `docker`, `system-design`
 
 ## Steps
 
 ### Step 1: Collect Existing Questions
 
-Read all notes in `docs/<domain>/`. For each note, extract:
+Read all notes in `docs/<domain-path>/`. For each note, extract:
 - Every question under `## Interview Questions` (all difficulty levels)
 - The note title and key concepts (for generating additional questions)
 

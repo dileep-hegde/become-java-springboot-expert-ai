@@ -39,10 +39,10 @@ See [setup-commands.md](./references/setup-commands.md) for the full npm command
 
 ### Operation B: Add a New Domain
 
-1. Check `docs/<domain>/` doesn't already exist
+1. Check `docs/<domain-path>/` doesn't already exist
 2. Check the target `position` in the [category-template.md](./references/category-template.md) doesn't conflict
-3. Create `docs/<domain>/_category_.json` using [category-template.md](./references/category-template.md)
-4. Create `docs/<domain>/index.md` — minimal structure, frontmatter, and placeholder table
+3. Create `docs/<domain-path>/_category_.json` using [category-template.md](./references/category-template.md)
+4. Create `docs/<domain-path>/index.md` — minimal structure, frontmatter, and placeholder table
 5. Create `docs/overviews/<domain>-overview.md` — stub with all required sections
 6. Run `npm run build` to confirm no broken links
 
@@ -105,8 +105,8 @@ Suggested reading order for a developer returning after a gap:
 
 ### Operation F: Set Up Demo Folder for a Domain
 
-1. Create `docs/<domain>/demo/` directory
-2. Create `docs/<domain>/demo/_category_.json`:
+1. Create `docs/<domain-path>/demo/` directory
+2. Create `docs/<domain-path>/demo/_category_.json`:
    ```json
    { "className": "hidden" }
    ```

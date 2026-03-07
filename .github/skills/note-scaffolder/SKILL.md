@@ -20,7 +20,7 @@ Creates a complete, publication-ready topic note from scratch, including all req
 
 Collect from the user (or infer from context):
 - **Topic**: The concept/tool/feature to document (e.g., "Virtual Threads", "Spring Transaction Management")
-- **Domain**: Target `docs/<domain>/` folder (see domain list below)
+- **Domain**: Target `docs/<domain-path>/` folder (use `java/<domain>` for Java language/JVM topics)
 - **Difficulty**: `beginner` | `intermediate` | `advanced`
 - **Note type**: `concept` | `tool` | `pattern` | `config`
 
@@ -28,7 +28,7 @@ If any are missing, ask before proceeding.
 
 ### Step 2: Check Domain Context
 
-Read `docs/<domain>/`:
+Read `docs/<domain-path>/`:
 - Find the highest `sidebar_position` → assign `sidebar_position = highest + 1`
 - List existing notes to identify 2–3 candidates for cross-links
 - Confirm no duplicate note already exists on this topic
@@ -56,21 +56,21 @@ Fill in every section — no stubs, no placeholders. Specifically:
 
 ### Step 5: Create the File
 
-Write to `docs/<domain>/<id>.md`.
+Write to `docs/<domain-path>/<id>.md`.
 
 ### Step 6: Create Demo Page (Optional)
 
 Ask the user if they want a demo page for this topic. If yes:
-1. Check if `docs/<domain>/demo/` exists — if not, create it with `_category_.json` (`{ "className": "hidden" }`)
+1. Check if `docs/<domain-path>/demo/` exists — if not, create it with `_category_.json` (`{ "className": "hidden" }`)
 2. Ensure `src/css/custom.css` has the `.hidden` sidebar rule (see `.github/instructions/docusaurus.instructions.md`)
-3. Use [demo-template.md](./references/demo-template.md) to build `docs/<domain>/demo/<id>-demo.md`
+3. Use [demo-template.md](./references/demo-template.md) to build `docs/<domain-path>/demo/<id>-demo.md`
 4. Add a `:::tip Practical Demo` callout in the topic note linking to the demo page
 5. Important: ensure the demo frontmatter includes `pagination_next: null` and `pagination_prev: null`.
   - Reason: demo pages live in a hidden category but Docusaurus can still generate prev/next links from the sidebar ordering; setting these keys to `null` explicitly suppresses the pagination bar and avoids confusing navigation that would point into the main docs order.
 
 ### Step 7: Update Domain Index
 
-If `docs/<domain>/index.md` exists:
+If `docs/<domain-path>/index.md` exists:
 - Add the new note to the "What You'll Find Here" table
 - Update the learning path if the note changes the recommended reading order
 
@@ -90,15 +90,17 @@ Before completing, verify:
 
 ```
 docs/
-  core-java/         oops/               java-type-system/
-  core-apis/         collections-framework/  multithreading/
-  io/                functional-programming/ jvm-internals/
-  annotations/       modules/            exceptions/
-  java-evolution/    java-design-patterns/   DSA/
+  java/
+    core-java/         oops/               java-type-system/
+    core-apis/         collections-framework/  multithreading/
+    io/                functional-programming/ jvm-internals/
+    annotations/       modules/            exceptions/
+    java-evolution/    java-design-patterns/   java-cheatsheets/
+  DSA/
   spring-framework/  spring-boot/        spring-data/
   spring-security/   web/                messaging/
   databases/         testing/            build-tools/
   version-control/   docker/             kubernetes/
   cloud/             devops/             system-design/
-  java-cheatsheets/  interview-prep/
+  interview-prep/
 ```

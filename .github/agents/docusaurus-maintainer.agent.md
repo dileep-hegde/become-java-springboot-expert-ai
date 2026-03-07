@@ -88,8 +88,8 @@ additionalLanguages: ['java', 'bash', 'yaml', 'json', 'xml']
 
 When asked to scaffold a new domain, create these three files in order:
 
-1. `docs/<domain>/_category_.json` — with correct label, position, and `link.id`
-2. `docs/<domain>/index.md` — domain landing page with frontmatter and structure
+1. `docs/<domain-path>/_category_.json` — with correct label, position, and `link.id`
+2. `docs/<domain-path>/index.md` — domain landing page with frontmatter and structure
 3. `docs/overviews/<domain>-overview.md` — stub overview page
 
 Reference the `docusaurus-new-domain` prompt for the exact file templates.

@@ -34,7 +34,7 @@ Quick reference for all valid frontmatter field values. Use this when filling in
 ## `sidebar_position`
 
 - Integer; lower = higher in sidebar within a domain
-- Check existing files: `ls docs/<domain>/` and find the max `sidebar_position` → use `max + 1`
+- Check existing files: `ls docs/<domain-path>/` and find the max `sidebar_position` → use `max + 1`
 - Suggested convention:
   | Range | Meaning |
   |-------|---------|

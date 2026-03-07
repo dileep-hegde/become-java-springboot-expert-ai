@@ -133,7 +133,11 @@ Sidebar sort order is controlled by:
 
 ## `_category_.json` — Required in Every Domain Folder
 
-Every `docs/<domain>/` folder **must** have a `_category_.json`. No exceptions.
+Every `docs/<domain-path>/` folder that appears in the sidebar **must** have a `_category_.json`. No exceptions.
+
+Path convention:
+- Top-level domains use `docs/<domain>/`, for example `docs/spring-boot/`
+- Java subdomains use `docs/java/<domain>/`, for example `docs/java/multithreading/`
 
 ### With `index.md` (preferred)
 
@@ -188,43 +192,51 @@ Destructive or security-sensitive behavior — proceed carefully.
 
 ---
 
-## Domain Sidebar Positions
+## Sidebar Positions
+
+### Top-Level `docs/` Categories
 
 | Position | Domain | Description |
 |----------|--------|-------------|
 | 1 | `overviews` | Quick-reference summaries |
-| 2 | `core-java` | Language basics |
-| 3 | `oops` | OOP principles |
-| 4 | `java-type-system` | Generics, autoboxing, type erasure |
-| 5 | `core-apis` | Object, String, Math, wrappers |
-| 6 | `collections-framework` | Collections hierarchy and utilities |
-| 7 | `exceptions` | Exception hierarchy and handling |
-| 8 | `functional-programming` | Lambdas, Streams, method references |
-| 9 | `multithreading` | Threads, concurrency, virtual threads |
-| 10 | `io` | File handling, NIO, serialization |
-| 11 | `jvm-internals` | Memory, GC, class loading, JIT |
-| 12 | `annotations` | Built-in, custom, meta-annotations |
-| 13 | `modules` | Java 9+ module system |
-| 14 | `java-evolution` | New features by Java version |
-| 15 | `java-design-patterns` | GoF patterns in Java |
-| 16 | `DSA` | Data structures and algorithms |
-| 17 | `spring-framework` | Core Spring: IoC, AOP, context |
-| 18 | `spring-boot` | Auto-config, starters, beans, DI |
-| 19 | `spring-data` | JPA, repositories, transactions |
-| 20 | `spring-security` | Auth, OAuth2, JWT, filters |
-| 21 | `web` | REST, HTTP, MVC, WebFlux |
-| 22 | `messaging` | Kafka, RabbitMQ, async patterns |
-| 23 | `databases` | SQL, NoSQL, migrations |
-| 24 | `testing` | Unit, integration, Testcontainers |
-| 25 | `build-tools` | Maven, Gradle |
-| 26 | `version-control` | Git internals, branching |
-| 27 | `docker` | Containerization, Compose |
-| 28 | `kubernetes` | Pods, services, deployments |
-| 29 | `cloud` | AWS/GCP/Azure patterns |
-| 30 | `devops` | CI/CD, observability |
-| 31 | `system-design` | Architecture, microservices |
-| 32 | `java-cheatsheets` | Quick reference pages |
-| 33 | `interview-prep` | Consolidated Q&A |
+| 2 | `java` | Parent category for Java language, JDK, and JVM subdomains |
+| 3 | `DSA` | Data structures and algorithms |
+| 4 | `spring-framework` | Core Spring: IoC, AOP, context |
+| 5 | `spring-boot` | Auto-config, starters, beans, DI |
+| 6 | `spring-data` | JPA, repositories, transactions |
+| 7 | `spring-security` | Auth, OAuth2, JWT, filters |
+| 8 | `web` | REST, HTTP, MVC, WebFlux |
+| 9 | `messaging` | Kafka, RabbitMQ, async patterns |
+| 10 | `databases` | SQL, NoSQL, migrations |
+| 11 | `testing` | Unit, integration, Testcontainers |
+| 12 | `build-tools` | Maven, Gradle |
+| 13 | `version-control` | Git internals, branching |
+| 14 | `docker` | Containerization, Compose |
+| 15 | `kubernetes` | Pods, services, deployments |
+| 16 | `cloud` | AWS/GCP/Azure patterns |
+| 17 | `devops` | CI/CD, observability |
+| 18 | `system-design` | Architecture, microservices |
+| 19 | `interview-prep` | Consolidated Q&A |
+
+### Nested `docs/java/` Subdomains
+
+| Position | Domain | Description |
+|----------|--------|-------------|
+| 1 | `core-java` | Language basics |
+| 2 | `oops` | OOP principles |
+| 3 | `java-type-system` | Generics, autoboxing, type erasure |
+| 4 | `core-apis` | Object, String, Math, wrappers |
+| 5 | `collections-framework` | Collections hierarchy and utilities |
+| 6 | `exceptions` | Exception hierarchy and handling |
+| 7 | `functional-programming` | Lambdas, Streams, method references |
+| 8 | `multithreading` | Threads, concurrency, virtual threads |
+| 9 | `io` | File handling, NIO, serialization |
+| 10 | `jvm-internals` | Memory, GC, class loading, JIT |
+| 11 | `annotations` | Built-in, custom, meta-annotations |
+| 12 | `modules` | Java 9+ module system |
+| 13 | `java-evolution` | New features by Java version |
+| 14 | `java-design-patterns` | GoF patterns in Java |
+| 15 | `java-cheatsheets` | Quick reference pages |
 
 ---
 
@@ -252,7 +264,7 @@ npm run clear          # Clear Docusaurus cache — use when styles/diagrams don
 
 ## Demo Pages — Hidden from Sidebar
 
-Demo pages (`docs/<domain>/demo/*.md`) provide hands-on code walkthroughs hidden from the main sidebar. Set them up as follows:
+Demo pages (`docs/<domain-path>/demo/*.md`) provide hands-on code walkthroughs hidden from the main sidebar. Set them up as follows:
 
 ### 1. `demo/_category_.json`
 

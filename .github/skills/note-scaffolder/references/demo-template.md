@@ -6,7 +6,7 @@ Use this template when creating a practical demonstration page (`demo/<topic-id>
 
 ## Placement & Naming
 
-- **Location**: `docs/<domain>/demo/<topic-id>-demo.md`
+- **Location**: `docs/<domain-path>/demo/<topic-id>-demo.md`
 - **ID convention**: `<topic-id>-demo` — e.g., `thread-lifecycle-demo`
 - **Link from topic note**: Add a callout block in the topic note's `## Code Examples` section or near the top, e.g.:
 

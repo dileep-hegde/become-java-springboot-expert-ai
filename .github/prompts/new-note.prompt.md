@@ -10,12 +10,12 @@ Create a complete, publication-ready note for the Java/Spring Boot knowledge bas
 
 The user must provide (ask if missing):
 1. **Topic name** — e.g., "Spring Bean Scopes", "Java ThreadLocal", "Virtual Threads"
-2. **Target domain** — the `docs/<domain>/` folder this note belongs to
+2. **Target domain** — the `docs/<domain-path>/` folder this note belongs to, for example `java/multithreading` or `spring-boot`
 
 ## Pre-Writing Steps
 
 ### Step 1: Check the Domain
-Read `docs/<domain>/` to:
+Read `docs/<domain-path>/` to:
 - Find the highest existing `sidebar_position` → use next integer for this note
 - Identify 2–3 existing notes that are related → for cross-links
 - Confirm no duplicate note exists for this topic
@@ -51,8 +51,8 @@ Diagram conventions are in `.github/instructions/diagrams.instructions.md`.
 
 ## After Writing
 
-1. Create the file at `docs/<domain>/<id>.md`
-2. If `docs/<domain>/index.md` exists, add the new note to the notes table and update the learning path
+1. Create the file at `docs/<domain-path>/<id>.md`
+2. If `docs/<domain-path>/index.md` exists, add the new note to the notes table and update the learning path
 
 ## Quality Gate
 

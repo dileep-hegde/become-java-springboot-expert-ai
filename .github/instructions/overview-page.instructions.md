@@ -92,9 +92,11 @@ Suggested reading order for a returning Java developer:
 
 ---
 
-## 2. `docs/<domain>/index.md` — Domain Entry Page
+## 2. `docs/<domain-path>/index.md` — Domain Entry Page
 
 This is the landing page for the domain shown in the Docusaurus sidebar. It orients new readers and lists all notes.
+
+Use `docs/java/<domain>/index.md` for Java language/JVM subdomains and `docs/<domain>/index.md` for top-level domains.
 
 ### Frontmatter
 

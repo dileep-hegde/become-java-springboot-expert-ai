@@ -114,27 +114,28 @@ Use tags consistently. Prefer existing tags over inventing new ones for each not
 
 ## Project Structure
 
-Organize notes under `docs/` by domain. Suggested top-level categories:
+Organize notes under `docs/` by domain. Use `docs/java/` as the parent for Java language/JVM subdomains, and keep framework/platform domains at the top level.
 
   
 ```
 docs/
   overviews/               # One-page summaries per domain for quick revision
-  core-java/               # Language basics: variables, data types, operators, control flow, type conversion
-  oops/                    # OOP principles: classes, objects, inheritance, polymorphism, encapsulation, abstraction, interfaces, records, sealed classes
-  java-type-system/        # Primitives vs objects, autoboxing/unboxing, generics, type inference, wildcards, type erasure, bounded type parameters
-  core-apis/               # Core classes such as Object, String, Math, wrapper classes
-  collections-framework/   # Collections hierarchy, List, Set, Map, iterators, Comparable vs Comparator, Collections utility class, immutability
-  multithreading/          # Threads, lifecycle, synchronization, concurrency utilities, volatile, virtual threads
-  io/                      # File handling, streams, serialization, NIO
-  functional-programming/  # Lambdas, functional interfaces, Streams API, method references
-  jvm-internals/           # Class loading, memory management, garbage collection, JIT compilation
-  annotations/             # Built-in annotations, custom annotations, meta-annotations, annotation processing
-  modules/                 # Java 9+ module system, module-info.java, encapsulation
-  exceptions/              # Exception hierarchy, checked vs unchecked, best practices, custom exceptions
-  java-evolution/          # Java version changes: Java 8, 9, 10, 11, 17, 21
-  java-design-patterns/    # Common design patterns in Java with examples
-  java-cheatsheets/        # Quick reference: collections, concurrency, streams
+  java/
+    core-java/               # Language basics: variables, data types, operators, control flow, type conversion
+    oops/                    # OOP principles: classes, objects, inheritance, polymorphism, encapsulation, abstraction, interfaces, records, sealed classes
+    java-type-system/        # Primitives vs objects, autoboxing/unboxing, generics, type inference, wildcards, type erasure, bounded type parameters
+    core-apis/               # Core classes such as Object, String, Math, wrapper classes
+    collections-framework/   # Collections hierarchy, List, Set, Map, iterators, Comparable vs Comparator, Collections utility class, immutability
+    multithreading/          # Threads, lifecycle, synchronization, concurrency utilities, volatile, virtual threads
+    io/                      # File handling, streams, serialization, NIO
+    functional-programming/  # Lambdas, functional interfaces, Streams API, method references
+    jvm-internals/           # Class loading, memory management, garbage collection, JIT compilation
+    annotations/             # Built-in annotations, custom annotations, meta-annotations, annotation processing
+    modules/                 # Java 9+ module system, module-info.java, encapsulation
+    exceptions/              # Exception hierarchy, checked vs unchecked, best practices, custom exceptions
+    java-evolution/          # Java version changes: Java 8, 9, 10, 11, 17, 21
+    java-design-patterns/    # Common design patterns in Java with examples
+    java-cheatsheets/        # Quick reference: collections, concurrency, streams
   DSA/                    # Common data structures, algorithms, complexity analysis
   spring-framework/       # Core Spring concepts: IoC etc.
   spring-boot/            # Auto-config, starters, beans, DI, AOP, etc.
