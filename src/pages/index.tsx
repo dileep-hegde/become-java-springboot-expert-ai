@@ -5,6 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
+import DomainTyper from '../components/DomainTyper/DomainTyper';
 
 const STATS = [
   {value: '34', label: 'Domains Covered'},
@@ -117,7 +118,9 @@ function DomainsSection(): ReactNode {
           <p className={styles.sectionSubtitle}>34 domains covering the full Java backend engineering stack</p>
         </div>
         <div className={styles.domainsGrid}>
-          {DOMAINS.map((domain) => <DomainCard key={domain.title} {...domain} />)}
+          <div className={styles.domainTyperRow}>
+            <DomainTyper domains={DOMAINS} />
+          </div>
         </div>
         <div className={styles.browseAll}>
           <Link className={clsx('button button--lg', styles.btnOutline)} to="/docs/overviews/">

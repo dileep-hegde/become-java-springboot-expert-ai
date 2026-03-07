@@ -209,6 +209,12 @@
   margin-bottom: 3rem;
 }
 
+.domainTyperRow {
+  grid-column: 1 / -1;
+  width: 100%;
+  display: block;
+}
+
 .domainCard {
   display: flex;
   flex-direction: column;
