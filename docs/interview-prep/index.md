@@ -1,9 +1,42 @@
 ---
 id: interview-prep-index
 title: Interview Prep
-description: Consolidated Q&A for each big section.
+description: Consolidated domain-specific Q&A for Java backend engineering interviews.
+sidebar_position: 1
+tags:
+  - java
+  - spring-boot
+  - overview
+last_updated: 2026-03-07
 ---
 
 # Interview Prep
 
-Consolidated Q&A for each big section.
+> This section aggregates the most important interview questions from each domain into dedicated per-domain Q&A pages. Each page organizes questions by difficulty (Beginner / Intermediate / Advanced) so you can focus revision time efficiently based on the role level you're targeting.
+
+## What You'll Find Here
+
+Per-domain interview Q&A pages are being added. Planned coverage:
+
+| Domain | Focus Areas |
+|--------|-------------|
+| Core Java Interview Q&A | Variables, operators, OOP, type system, String, Collections fundamentals. |
+| Multithreading Interview Q&A | `synchronized`, `volatile`, `CompletableFuture`, virtual threads. |
+| JVM Internals Interview Q&A | GC algorithms, class loading, JIT compilation, memory areas. |
+| Functional Programming Q&A | Lambdas, Streams, method references, `Optional`. |
+| Spring Framework Q&A | IoC, DI, AOP, bean scopes, bean lifecycle. |
+| Spring Boot Q&A | Auto-configuration, starters, Actuator, profiles. |
+| Spring Data Q&A | JPA mapping, transaction propagation, N+1 problem, `@Transactional`. |
+| Spring Security Q&A | Filter chain, OAuth2 flows, JWT validation, method security. |
+| System Design Q&A | Microservices trade-offs, caching, reliability patterns, API design. |
+
+## How to Use This Section
+
+- Skim **Beginner** questions in each page to confirm you have no blind spots in the basics.
+- Focus revision time on **Intermediate** questions — these are the target for 3–5 YOE roles.
+- Work through **Advanced** questions to prepare for senior and staff engineer interviews.
+
+## Related Domains
+
+- [Overviews](../overviews/index.md) — domain overviews are the quick-reference complement to these Q&A pages.
+- [Java](../java/index.md) — Java domain notes contain the full context behind each answer.

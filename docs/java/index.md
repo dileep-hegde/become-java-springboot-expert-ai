@@ -2,6 +2,11 @@
 id: java-index
 title: Java
 description: Core Java language, standard library, JVM, and runtime concepts organized as dedicated subdomains.
+sidebar_position: 1
+tags:
+  - java
+  - overview
+last_updated: 2026-03-07
 ---
 
 # Java
