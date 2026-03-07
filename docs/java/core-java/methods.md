@@ -21,6 +21,8 @@ sources:
 
 > A method is a named block of reusable code — the fundamental unit of behavior in Java programs.
 
+> Note: Clarifications — examples on this page illustrate pass-by-value semantics and common pitfalls. For precise rules on argument evaluation, method invocation, and stack-frame behavior, consult the JLS and the Java API documentation (see JLS method invocation sections).
+
 ## What Problem Does It Solve?
 
 Without methods, you would duplicate logic everywhere: the same validation logic copy-pasted into twenty controllers, the same formatting code repeated in every print statement. Duplication means bugs are fixed in one place but not others; logic changes require hunting down every copy. Methods solve this by naming a computation, parameterizing it with inputs, and allowing it to be called from anywhere — once defined, a behavior belongs to the vocabulary of your program.

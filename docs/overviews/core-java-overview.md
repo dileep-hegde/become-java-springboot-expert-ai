@@ -14,6 +14,8 @@ last_updated: 2026-03-07
 
 > Core Java covers the foundational building blocks every Java program is built on: how data is stored (primitives and references), how it is computed (operators and expressions), how execution is directed (control flow), and how programs are structured (methods, arrays, strings, packages). These are not just beginner topics — a shaky foundation here causes subtle bugs in production Spring Boot applications every day.
 
+> Note: Clarifications — this overview states JDK versions for finalized language features and treats implementation-specific algorithm details (e.g., `Arrays.sort` algorithms, string-concat implementation) as implementation notes. For language feature provenance, see JEP 286, JEP 361, JEP 395, JEP 409, and JEP 394; for API details, see the `String` and `Arrays` javadocs.
+
 ## Key Concepts at a Glance
 
 - **Primitive types**: 8 built-in types (`byte`, `short`, `int`, `long`, `float`, `double`, `char`, `boolean`) that store raw values on the stack; not objects.

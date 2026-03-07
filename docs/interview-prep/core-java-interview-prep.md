@@ -17,6 +17,8 @@ last_updated: 2026-03-07
 
 > Consolidated Q&A for Core Java. Use for rapid revision before backend interviews.
 
+> Note: Clarifications — this page uses specific JDK versions where a feature was finalized and marks implementation-specific details (for example, array-sorting algorithms or string-concat strategies) as implementation notes. Authoritative sources: JEPs and the Java API docs (see JEP 286, JEP 361, JEP 395, JEP 409, JEP 394, and the `String` / `Arrays` javadocs).
+
 ## How to Use This Page
 
 - Skim **Beginner** questions to solidify fundamentals before anything else

@@ -14,6 +14,8 @@ last_updated: 2026-03-07
 
 > Consolidated Q&A for Java Object-Oriented Programming. Use for rapid revision before backend interviews.
 
+> Note: Clarifications — this page uses specific JDK versions where features were finalized and marks implementation-specific details as implementation notes. See JEPs and the Java API docs for authoritative references (for example, JEP 395 for records and JEP 409 for sealed classes).
+
 ## How to Use This Page
 
 - Skim **Beginner** questions to solidify fundamentals

@@ -20,6 +20,8 @@ sources:
 
 > An array is Java's simplest data structure — a fixed-size, ordered, contiguous block of elements of a single type.
 
+> Note: Clarifications — implementation details such as the concrete sorting algorithm used by `Arrays.sort` are described in the `Arrays` javadoc and are implementation notes (may vary by JDK). This document cites the `Arrays` API for algorithm notes rather than treating them as language guarantees.
+
 ## What Problem Does It Solve?
 
 Suppose you need to track the monthly sales figures for a year. Without arrays, you'd declare 12 separate variables: `jan`, `feb`, `mar`, ... — and all loops, summations, and comparisons would become unmaintainable. Arrays let you group related values under a single name, access any element instantly by position, and iterate over all values with a simple loop.

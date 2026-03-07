@@ -22,6 +22,8 @@ sources:
 
 > A record is Java's built-in, concise way to declare an immutable data carrier — it eliminates the boilerplate of fields, constructor, getters, `equals`, `hashCode`, and `toString` that you'd otherwise write by hand.
 
+> Note: Clarifications — records were finalized in JDK 16 (see JEP 395). This page shows common patterns and compact constructor examples; consult the JEP and the Java language docs for exact restrictions and serialization caveats.
+
 ## What Problem Does It Solve?
 
 Before records, writing a simple value class in Java was tedious and error-prone:

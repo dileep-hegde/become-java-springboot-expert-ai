@@ -22,6 +22,8 @@ sources:
 
 > `String` is the most frequently used class in Java — and it comes with design decisions that surprise most developers until they understand the reasoning.
 
+> Note: Clarifications — this page uses the Java API and JEPs for authoritative behavior. Implementation-specific details (for example, how `javac` and the JVM implement string concatenation or where the string pool is stored) are described as implementation notes and may vary between JDK versions. Refer to the `String` javadoc and JEP 280 for concat implementation history.
+
 ## What Problem Does It Solve?
 
 Text manipulation is central to almost every program — parsing user input, building URLs, logging, serialization, and rendering output all involve strings. Java's `String` class needed to solve several competing demands simultaneously:

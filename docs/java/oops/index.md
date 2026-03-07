@@ -13,6 +13,8 @@ last_updated: 2026-03-07
 
 > Java is built on four OOP pillars — encapsulation, inheritance, polymorphism, and abstraction. Understanding these well is not just required for interviews; it directly determines whether the code you write is maintainable, testable, and extensible. Modern Java (16+) adds records and sealed classes that reshape how you model data.
 
+> Note: Clarifications — this domain includes JDK-specific features (records, sealed classes). Each topic indicates required JDK version when relevant; check the linked JEPs and language docs before using a feature in production.
+
 ## What You'll Find Here
 
 | Topic | Description |

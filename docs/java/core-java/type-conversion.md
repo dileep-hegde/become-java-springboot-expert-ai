@@ -21,6 +21,8 @@ sources:
 
 > Java is a statically typed language — but it provides well-defined rules for converting values between compatible types, both automatically and on your explicit request.
 
+> Note: Clarifications — this note follows the Java Language Specification (JLS) conversion rules; examples are simplified for readability. For exact normative rules on numeric and reference conversions consult the JLS and the Java API. See https://docs.oracle.com/javase/specs/ and the `double`/`int` conversion sections for precise semantics.
+
 ## What Problem Does It Solve?
 
 Real programs constantly mix numeric types. An API returns a `long` timestamp but your business logic works with `int`. A user inputs a `double` price but you need to truncate it to the nearest `int` for display. Without conversion rules, you'd have to manually read and rewrite every bit — error-prone and unreadable.

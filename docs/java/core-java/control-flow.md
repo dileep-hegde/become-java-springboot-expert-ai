@@ -22,6 +22,8 @@ sources:
 
 > A program that only executes statements top-to-bottom isn't very useful — control flow gives you the ability to branch, repeat, and skip based on conditions.
 
+> Note: Clarifications — switch expressions and pattern-matching features are described with their JDK provenance; switch-expression semantics come from JEP 361 (JDK 14) and pattern matching features evolved across JEP 394/406 and later JDKs. Treat pattern-match-for-switch as version-specific — check the JEPs before using in older JDKs.
+
 ## What Problem Does It Solve?
 
 Every real program must answer questions at runtime: Is the user authenticated? Is the list empty? Should this action be retried? Without control flow, you'd have to write separate code paths for every possible combination of inputs — an impossible task. Branching (`if`/`switch`) lets a single program adapt to different inputs; looping (`for`/`while`) lets you process collections and repeat operations without code duplication.

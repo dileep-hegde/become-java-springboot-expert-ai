@@ -21,6 +21,8 @@ sources:
 
 > An expression is any combination of values, variables, methods, and operators that evaluates to a single value — and operators are the vocabulary that combines them.
 
+> Note: Clarifications — operator semantics here follow the Java Language Specification (JLS). Where the file discusses newer language constructs (for example, pattern-matching `instanceof` or switch expressions), JDK/JEP references are included; consult JEP 394 and JEP 361 for pattern/switch specifics.
+
 ## What Problem Does It Solve?
 
 Programs compute. They add prices, compare dates, combine boolean conditions, and manipulate bits in message flags. Without operators, every computation would require calling a method — even basic arithmetic. Operators provide a compact, expressive syntax for common computations that the compiler can optimize efficiently. Understanding operator precedence and behavior prevents subtle logic bugs lurking in complex conditions that look correct but evaluate differently than intended.

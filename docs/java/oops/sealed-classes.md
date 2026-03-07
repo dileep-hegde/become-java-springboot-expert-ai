@@ -22,6 +22,8 @@ sources:
 
 > A sealed class explicitly lists every class that is permitted to extend it — giving you a **closed type hierarchy** that the compiler can enforce, and enabling `switch` expressions to be **exhaustive without a default branch**.
 
+> Note: Clarifications — sealed classes were finalized in JDK 17 (see JEP 409). The `permits` rules are module/package-sensitive; consult the JEP for exact visibility and JVM classfile attributes. Treat exhaustiveness guarantees as compile-time checks — runtime behavior depends on the compiled code and permitted subclasses.
+
 ## What Problem Does It Solve?
 
 In Java, any class can be subclassed by default. This is great for open extension points, but for **domain types with a fixed set of variants**, open extension is a liability.

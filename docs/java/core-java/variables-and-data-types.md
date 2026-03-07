@@ -21,6 +21,8 @@ sources:
 
 > Every value stored in a Java program has a type — and understanding that type system is the foundation for writing correct, performant code.
 
+> Note: Clarifications — where this file references `var` or other relatively recent language features, the JDK version that finalized the feature is shown (for `var`, JDK 10). Examples are simplified; consult JEP 286 and the Java API docs for full details.
+
 ## What Problem Does It Solve?
 
 Without a type system, a program has no way to know what operations are valid on a piece of data. You can't multiply a name by a salary, or compare a timestamp to a boolean. Java's type system enforces correctness at compile time: the compiler rejects nonsensical operations before your code ever runs. This catches an entire class of bugs — null pointer misuse, arithmetic on strings, binary-level corruption — before they become runtime disasters.
