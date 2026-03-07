@@ -114,7 +114,7 @@ function DomainsSection(): ReactNode {
       <div className="container">
         <div className={styles.sectionHeader}>
           <Heading as="h2" className={styles.sectionTitle}>What&apos;s Inside</Heading>
-          <p className={styles.sectionSubtitle}>33 domains covering the full Java backend engineering stack</p>
+          <p className={styles.sectionSubtitle}>34 domains covering the full Java backend engineering stack</p>
         </div>
         <div className={styles.domainsGrid}>
           {DOMAINS.map((domain) => <DomainCard key={domain.title} {...domain} />)}
