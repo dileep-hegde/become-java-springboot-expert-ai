@@ -16,11 +16,10 @@ last_updated: 2026-03-07
 
 ## What You'll Find Here
 
-Per-domain interview Q&A pages are being added. Planned coverage:
-
 | Domain | Focus Areas |
 |--------|-------------|
-| Core Java Interview Q&A | Variables, operators, OOP, type system, String, Collections fundamentals. |
+| [Core Java Interview Q&A](./core-java-interview-prep.md) | Variables, operators, OOP, type system, String, Collections fundamentals. |
+| [OOP Interview Q&A](./oops-interview-prep.md) | Classes, encapsulation, inheritance, polymorphism, abstraction, records, sealed classes. |
 | Multithreading Interview Q&A | `synchronized`, `volatile`, `CompletableFuture`, virtual threads. |
 | JVM Internals Interview Q&A | GC algorithms, class loading, JIT compilation, memory areas. |
 | Functional Programming Q&A | Lambdas, Streams, method references, `Optional`. |
