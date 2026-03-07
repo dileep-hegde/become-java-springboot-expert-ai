@@ -1195,3 +1195,67 @@ Architecture-level questions for senior/staff roles.
 - **Design a URL Shortener**: Scaling reads, consistent hashing, TTL.
 - **Design a Rate Limiter**: Token bucket vs. sliding window; distributed state.
 - **Design a Notification Service**: Fan-out on write vs. fan-out on read; Kafka topics.
+
+---
+
+## `modules`
+
+# **What Is JPMS?**:
+The Java Platform Module System (Project Jigsaw), introduced in Java 9.
+
+- **module-info.java**: The module descriptor — declares module name, `requires`, `exports`, `opens`, `uses`, `provides`.
+- **Named Modules**: Modules with explicit `module-info.java`; strong encapsulation enforced by the JVM.
+- **Automatic Modules**: JARs on the module path without `module-info.java`; their name is derived from the JAR filename.
+- **Unnamed Module**: Classic classpath JARs — can read all modules but cannot be required by name.
+
+# **Key Directives**:
+The vocabulary of `module-info.java`.
+
+- **`requires`**: Declares compile-time and runtime dependency on another module.
+- **`requires transitive`**: Re-exports a dependency so downstream consumers get it automatically.
+- **`exports`**: Makes a package visible to all other modules (or selectively with `exports ... to`).
+- **`opens`**: Allows deep reflection at runtime (needed for frameworks like Spring, Hibernate).
+- **`uses` / `provides`**: Service loader mechanism — declares consumed and implemented services.
+
+# **Migration Strategies**:
+Moving an existing application to the module system.
+
+- **Classpath-first**: Run modern Java with classpath only (unnamed module) — most Spring Boot apps do this.
+- **Automatic Modules Bridge**: Move JARs to module path incrementally.
+- **`--add-opens` / `--add-exports`**: JVM flags to temporarily open encapsulated packages (common Spring Boot workaround).
+- **Multi-Release JARs**: Package different class versions per Java release in one JAR.
+
+# **Spring Boot and JPMS**:
+Practical considerations for Spring Boot applications.
+
+- **Spring Boot runs fine on classpath** — full module system adoption is optional and rare in typical app code.
+- **Framework internals use `--add-opens`** — Spring uses reflection internally; the Spring Boot launcher adds the necessary flags automatically.
+- **GraalVM Native Image** requires explicit reflection config which overlaps with JPMS open declarations.
+
+---
+
+## `java-cheatsheets`
+
+# **Purpose of This Domain**:
+Quick-reference notes designed for fast revision, not deep learning.
+
+> **Note**: `java-cheatsheets` is a reference/summary domain, not a topic-teaching domain. Notes here are condensed summaries of content covered in depth elsewhere. Each cheatsheet should link back to the authoritative notes.
+
+# **Planned Cheatsheets**:
+One cheatsheet per major domain area for rapid pre-interview revision.
+
+- **Collections Cheatsheet**: `List`, `Set`, `Map` implementations at a glance — time complexities, thread-safety, null handling, when to use each.
+- **Concurrency Cheatsheet**: `Thread`, `ExecutorService`, `CompletableFuture`, `synchronized`, `volatile`, `Lock` — quick API reference and gotchas.
+- **Streams & Functional Cheatsheet**: All stream intermediate and terminal operations, `Optional` API, common method reference patterns.
+- **Spring Boot Annotations Cheatsheet**: Most-used annotations, what they do, what they compose from.
+- **JVM Flags Cheatsheet**: Common heap, GC, and diagnostic flags for tuning and debugging.
+- **SQL & JPA Cheatsheet**: Common JPQL, native query patterns, `@Entity` mapping annotations.
+
+# **Cheatsheet Note Format**:
+How cheatsheet notes differ from standard topic notes.
+
+- **Frontmatter**: Same required fields; `tags` must include `cheatsheet` and `quick-reference`.
+- **No "What Problem Does It Solve?" section** required — these are reference pages, not explainers.
+- **Structure**: Short summary → reference tables → code snippets → links to full notes.
+- **Tables over prose**: Prefer `| API | What it does | Notes |` tables for scannable content.
+- **Cross-links mandatory**: Every cheatsheet must link to its full topic note(s).
