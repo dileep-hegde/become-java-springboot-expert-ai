@@ -51,6 +51,7 @@ Fill in Best Practices, Common Pitfalls, and Interview Questions:
 - Add `## Further Reading` with at least one authoritative source link
 - Add `## Related Notes` with 2–3 related notes and an explanation of *why* they're related
 - Verify all cross-link paths use valid relative Docusaurus format
+- **Foundational inline links**: For any term in the body that has its own foundational note, inline-link its *first occurrence* back to that note. Use the pattern `[thread](../multithreading/threads.md)`. Link only the most critical prerequisite per section — do not over-link. The foundational note must already exist before adding the link.
 
 ## Constraints
 
@@ -65,4 +66,5 @@ Fill in Best Practices, Common Pitfalls, and Interview Questions:
 
 - Create the file at `docs/<domain>/<id>.md`
 - If `docs/<domain>/index.md` exists: add the new note to the notes table and update the learning path
+- Ask the user if they want a **demo page** created (`docs/<domain>/demo/<id>-demo.md`) with step-by-step runnable examples. Use `.github/skills/note-scaffolder/references/demo-template.md` as the template.
 - Ask the user if they want the overview page regenerated for this domain

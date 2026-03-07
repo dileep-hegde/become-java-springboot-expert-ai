@@ -164,3 +164,51 @@ Use SVG when:
 - Do NOT use external rendering tools (Visio, Lucidchart, Miro) — only Mermaid/SVG
 - Do NOT create a single massive diagram — break into 2–3 smaller ones
 - Do NOT use color as the only differentiator — also use shape or label differences for accessibility
+
+---
+
+## Common Mermaid mistakes & fixes
+
+When writing Mermaid blocks authors occasionally hit parser errors caused by unescaped special characters or chained arrows. Add these quick fixes to the guidelines and follow them in examples:
+
+- Problem: labels containing parentheses, angle brackets, slashes, commas, or colons break the parser.
+  - Fix: wrap node labels in double quotes. Example:
+
+  Before:
+  ```mermaid
+  flowchart LR
+    A[SocketChannel] --> B[ByteBuffer]
+    B --> C[flip()] --> D[write to channel]
+  ```
+
+  After (fix):
+  ```mermaid
+  flowchart LR
+    A["SocketChannel"] --> B["ByteBuffer"]
+    B --> C["flip()"]
+    C --> D["write to channel"]
+  ```
+
+- Problem: chaining arrows on a single line (e.g., `B --> C --> D`) can confuse the parser or create ambiguous node text.
+  - Fix: split into separate statements as shown above.
+
+- Problem: complex inline messages in `sequenceDiagram` that include arrow-like text or multiple actions on one line cause parse errors.
+  - Fix: split the step into multiple simple lines and avoid embedding `->`/`->>` text in the message. Example:
+
+  Before:
+  ```mermaid
+  sequenceDiagram
+    Sel->>S: selectedKeys -> accept -> configureNonBlocking
+  ```
+
+  After (fix):
+  ```mermaid
+  sequenceDiagram
+    Sel->>S: selectedKeys
+    S->>S: accept() / configureNonBlocking()
+  ```
+
+- Problem: unescaped angle brackets like `<` or `>` inside labels (e.g., `Stream<String>`) break YAML/mermaid mix.
+  - Fix: quote the label or replace angle brackets with a readable form: `"Stream<String> lines"` or `Stream&lt;String&gt; lines`.
+
+These changes prevent common YAML/mermaid parser errors and make diagrams robust across the docs site. If a diagram still fails after these edits, run a local quick render with a Mermaid linter or paste the block into the Docusaurus dev server page to inspect build logs.

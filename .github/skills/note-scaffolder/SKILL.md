@@ -58,7 +58,17 @@ Fill in every section — no stubs, no placeholders. Specifically:
 
 Write to `docs/<domain>/<id>.md`.
 
-### Step 6: Update Domain Index
+### Step 6: Create Demo Page (Optional)
+
+Ask the user if they want a demo page for this topic. If yes:
+1. Check if `docs/<domain>/demo/` exists — if not, create it with `_category_.json` (`{ "className": "hidden" }`)
+2. Ensure `src/css/custom.css` has the `.hidden` sidebar rule (see `.github/instructions/docusaurus.instructions.md`)
+3. Use [demo-template.md](./references/demo-template.md) to build `docs/<domain>/demo/<id>-demo.md`
+4. Add a `:::tip Practical Demo` callout in the topic note linking to the demo page
+5. Important: ensure the demo frontmatter includes `pagination_next: null` and `pagination_prev: null`.
+  - Reason: demo pages live in a hidden category but Docusaurus can still generate prev/next links from the sidebar ordering; setting these keys to `null` explicitly suppresses the pagination bar and avoids confusing navigation that would point into the main docs order.
+
+### Step 7: Update Domain Index
 
 If `docs/<domain>/index.md` exists:
 - Add the new note to the "What You'll Find Here" table
@@ -73,6 +83,8 @@ Before completing, verify:
 - [ ] All cross-links use valid relative paths (`../domain/note-id.md`)
 - [ ] `sources:` frontmatter has at least one authoritative URL
 - [ ] Interview questions exist for all three difficulty groups
+- [ ] Foundational terms in body text are inline-linked to their existing foundational notes (first occurrence only)
+- [ ] If a demo page was created: topic note contains a `:::tip Practical Demo` callout linking to it
 
 ## Domain Reference
 

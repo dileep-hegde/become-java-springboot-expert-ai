@@ -247,3 +247,95 @@ npm run clear          # Clear Docusaurus cache — use when styles/diagrams don
 - Sidebar is always auto-generated — do NOT hardcode items
 - `_category_.json` `link.id` **must** match the `id` in the corresponding `index.md`
 - Do NOT enable the blog plugin unless explicitly requested
+
+---
+
+## Demo Pages — Hidden from Sidebar
+
+Demo pages (`docs/<domain>/demo/*.md`) provide hands-on code walkthroughs hidden from the main sidebar. Set them up as follows:
+
+### 1. `demo/_category_.json`
+
+Create this file in every `demo/` subfolder — no `label` or `position` needed:
+
+```json
+{
+  "className": "hidden"
+}
+```
+
+### 2. CSS Rule in `src/css/custom.css`
+
+Add this rule **once** — it applies to all `demo/` folders site-wide:
+
+```css
+/* Hide demo pages from sidebar navigation */
+.menu__list .hidden > .menu__list-item-collapsible,
+.menu__list .hidden {
+  display: none;
+}
+```
+
+### 3. Demo Page Frontmatter Requirements
+
+Every demo page must have these two frontmatter fields to remove prev/next navigation arrows:
+
+```yaml
+pagination_next: null
+pagination_prev: null
+```
+
+### 4. Linking from Topic Notes
+
+Link to demo pages from the corresponding topic note using a `:::tip` admonition. Place it after the opening tagline or inside `## Code Examples`:
+
+```markdown
+:::tip Practical Demo
+Runnable step-by-step examples: [<Topic> Demo](./demo/<topic-id>-demo.md)
+:::
+```
+
+---
+
+## Code Blocks — Line Numbers & Highlighting
+
+### Enable Line Numbers per Block
+
+Add `showLineNumbers` after the language identifier:
+
+````
+```java showLineNumbers
+public class Example {}
+```
+````
+
+### Highlight Specific Lines
+
+Add `{line-numbers}` after the language identifier:
+
+````
+```java showLineNumbers {3,7-9}
+// line 3 and lines 7–9 will be highlighted
+```
+````
+
+### Add a Filename as Block Title
+
+````
+```java title="ThreadExample.java" showLineNumbers {2,5-7}
+// code here
+```
+````
+
+### Output Blocks
+
+Follow every code block in a demo page with the expected output:
+
+````
+**Expected Output:**
+```
+output text here
+```
+````
+
+> **Convention**: Use `showLineNumbers` in demo pages as standard. In topic notes, use it only when discussing specific line logic.

@@ -59,27 +59,61 @@ Check existing files in the domain folder. Assign the next available integer. Fo
 1.  # Title
 2.  > One-sentence blockquote tagline
 3.  ## What Problem Does It Solve?
-4.  ## What Is It?
+4.  ## What Is It?            ← or use the concept name as the heading (see Flexibility Rules)
 5.  ## How It Works
 6.  ## Code Examples
-7.  ## Best Practices   (or ## Trade-offs & When To Use / Avoid)
+7.  ## Best Practices         ← or Trade-offs & When To Use / Avoid (see Flexibility Rules)
 8.  ## Common Pitfalls
 9.  ## Interview Questions
 10. ## Further Reading
-11. ## Related Notes   (if cross-links add value)
+11. ## Related Notes          (if cross-links add value)
 ```
 
 **Minimum 5–7 sections, maximum 10–12 total.** Do not skip mandatory sections; write a brief note if content is thin rather than omitting the heading.
 
-### Optional Sections — add only when genuinely useful
+### Section Flexibility Rules
+
+The template is a **starting point**, not a rigid cage. Apply these rules when a section name or its presence would make the note unnatural or repetitive:
+
+#### Rule 1 — Rename "What Is It?" to the concept name
+If the topic is a concrete, well-named thing (a class, annotation, or mechanism), use the concept name as the heading instead of the generic question form:
+
+```markdown
+## Thread                         ← instead of "## What Is It?"
+A thread is the smallest unit of execution in the JVM...
+```
+
+```markdown
+## @Transactional                 ← instead of "## What Is It?"
+Spring's declarative transaction boundary annotation...
+```
+
+Use the question form (`## What Is It?`) only when the concept is abstract or needs framing first (e.g., "What Is Dependency Injection?").
+
+#### Rule 2 — Swap "Best Practices" for "Trade-offs & When To Use / Avoid"
+For tools, patterns, and features with meaningful downsides, replace `## Best Practices` with:
+
+```markdown
+## Trade-offs & When To Use / Avoid
+| | Pros | Cons |
+|--|------|------|
+```
+
+For concepts with actionable dos and don'ts, keep `## Best Practices`.
+
+#### Rule 3 — Add topically necessary sections
+The following optional sections may be added *between* sections 6 and 9 when genuinely useful. Do not exceed 12 total sections:
 
 | Section | When to add |
 |---------|-------------|
 | `## Analogy` | Abstract concepts that need a real-world bridge |
-| `## Trade-offs & When To Use / Avoid` | Tools/patterns with significant trade-offs |
-| `## Real-World Use Cases` | When production context clarifies the concept meaningfully |
+| `## Real-World Use Cases` | When production context meaningfully clarifies the concept |
 | `## Comparison` | Concept best understood against a similar alternative |
 | `## Internals` | JVM or Spring internals that explain observable behavior |
+| `## Use Cases` | When listing practical scenarios helps more than prose |
+
+#### Rule 4 — Skip optional sections that add no value
+If a section would be a stub or repeat earlier content, omit it rather than leaving it empty. The minimum is 5 complete sections.
 
 ---
 
@@ -177,6 +211,25 @@ Format:
 - Use Docusaurus relative paths: `[link text](../domain/note-id.md)`
 - Links in body copy are fine; consolidate in `## Related Notes` at the bottom
 - Explain *why* topics are related, not just that they are
+
+### Foundational Concept Linking
+
+When a note uses a term or concept that is covered by a simpler, foundational note:
+- **Inline-link the first occurrence** of that term in the body text back to the foundational note
+- Only link the *most essential* foundational term — do not turn every technical word into a link
+- The purpose is navigation: if a reader doesn't know the linked term, they can click through to build context before continuing
+
+**Example pattern:**
+```markdown
+A [Thread](../multithreading/threads.md) is the fundamental unit of concurrency in Java.
+Multithreading allows many threads to run concurrently, sharing the same JVM memory.
+```
+
+**Rules:**
+- Link on first mention only — do not repeat the same link in the same note
+- Choose the single most unfamiliar prerequisite term per paragraph or per section
+- The foundational note *must already exist* — do not create a broken link to a planned note
+- If the foundational note is in a different domain, use a cross-domain relative path: `../../other-domain/note-id.md`
 
 ---
 
