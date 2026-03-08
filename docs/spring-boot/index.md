@@ -41,8 +41,12 @@ last_updated: 2026-03-08
 
 Practical, hidden demo pages with runnable examples and step-by-step walkthroughs:
 
-- [Auto-Configuration Demo](./demo/auto-configuration-demo.md) — observe the conditions evaluation report, override and write auto-configurations.
-- [Application Properties Demo](./demo/application-properties-demo.md) — profiles, `@ConfigurationProperties`, validation, and test overrides.
-- [Starters Demo](./demo/spring-boot-starters-demo.md) — what starters pull in, dependency tree inspection, and swapping embedded servers.
-- [Actuator Demo](./demo/actuator-demo.md) — exposing endpoints, custom health indicators, Micrometer/Prometheus, securing management endpoints.
-- [Testing Demo](./demo/spring-boot-testing-demo.md) — unit → slice → integration → Testcontainers examples using an order-service domain.
+Hands-on step-by-step demos with runnable examples:
+
+| Demo | What It Shows |
+|------|---------------|
+| [Auto-Configuration Demo](./demo/auto-configuration-demo.md) | Observe auto-config condition evaluation, override defaults, and write a minimal auto-configuration. |
+| [Application Properties Demo](./demo/application-properties-demo.md) | Profiles, `@ConfigurationProperties` binding, validation, and test property overrides. |
+| [Starters Demo](./demo/spring-boot-starters-demo.md) | Inspect what common starters pull in, dependency-tree examples, and swapping embedded servers. |
+| [Actuator Demo](./demo/actuator-demo.md) | Expose and secure Actuator endpoints, custom health indicators, and Micrometer/Prometheus wiring. |
+| [Testing Demo](./demo/spring-boot-testing-demo.md) | Unit → slice → integration → Testcontainers examples and context caching strategies. |

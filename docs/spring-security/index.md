@@ -38,3 +38,16 @@ last_updated: 2026-03-08
 - [Spring Boot](../spring-boot/index.md) — `spring-boot-starter-security` auto-configures a default security setup.
 - [Web & REST](../web/index.md) — CORS configuration and stateless REST security are web-layer concerns.
 - [Spring Framework](../spring-framework/index.md) — Spring Security's AOP method security builds on Spring AOP.
+
+## Demos
+
+Hands-on, runnable demos for common Spring Security scenarios:
+
+| Demo | What It Shows |
+|------|---------------|
+| [Security Filter Chain — Practical Demo](./demo/security-filter-chain-demo.md) | Minimal stateless config, custom filters, multiple chains, and TRACE logging examples. |
+| [Authentication — Practical Demo](./demo/authentication-demo.md) | JPA `UserDetailsService`, password hashing at registration, login endpoint, and test patterns with `@WithMockUser`. |
+| [Authorization — Practical Demo](./demo/authorization-demo.md) | URL rules matrix, `@PreAuthorize` examples, `PermissionEvaluator` implementation, and authorization tests. |
+| [JWT — Practical Demo](./demo/jwt-demo.md) | Token generation (JJWT), `JwtService`, `JwtAuthenticationConverter`, and example curl scripts. |
+| [OAuth2 & OIDC — Practical Demo](./demo/oauth2-oidc-demo.md) | Social login (OIDC), `OidcUserService` persistence, Keycloak resource server, and Client Credentials with `WebClient`. |
+| [CSRF & CORS — Practical Demo](./demo/csrf-cors-demo.md) | Cookie CSRF for SPAs, disabling CSRF for JWT APIs, production CORS config, preflight 401 fix, and MockMvc tests. |
