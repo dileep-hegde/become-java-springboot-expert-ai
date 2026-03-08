@@ -15,22 +15,21 @@ last_updated: 2026-03-07
 
 ## What You'll Find Here
 
-Notes are being added. Planned topics:
-
 | Topic | Description |
 |-------|-------------|
-| Object Class | `equals`, `hashCode`, `toString`, `clone`, `wait`/`notify`. |
-| String, StringBuilder, StringJoiner | Text processing APIs — immutability, pool, builder pattern. |
-| Math & StrictMath | `abs`, `pow`, `floor`, overflow-safe arithmetic methods. |
-| Wrapper Classes | `Integer`, `Long`, `Double`; `parseInt`, caching gotcha with `==`. |
-| Optional (Java 8+) | Nullable-value container; proper use and common anti-patterns. |
+| [Object Class](./object-class.md) | `equals`, `hashCode`, `toString`, `clone`, `wait`/`notify` — the root contract every Java object must honour. |
+| [String, StringBuilder, StringJoiner](./string-stringbuilder-stringjoiner.md) | Text processing APIs — immutability, pool, efficient building, and delimited joining. |
+| [Math & StrictMath](./math-strictmath.md) | `abs`, `pow`, `floor`, overflow-safe arithmetic methods, and cross-platform reproducibility. |
+| [Wrapper Classes](./wrapper-classes.md) | `Integer`, `Long`, `Double`; `parseInt`, caching gotcha with `==`, and autoboxing NPE traps. |
+| [Optional (Java 8+)](./optional.md) | Nullable-value container; proper use patterns and common anti-patterns to avoid. |
 
 ## Learning Path
 
-1. **Object Class** — the `equals`/`hashCode` contract is foundational; violating it breaks collections.
-2. **String & StringBuilder** — understand immutability and when to use `StringBuilder` over `+`.
-3. **Wrapper Classes** — focus on the `Integer.valueOf(-128..127)` caching trap and its `==` implication.
-4. **Optional** — learn what it solves, then learn what it does NOT solve (never use as a field or parameter).
+1. **[Object Class](./object-class.md)** — the `equals`/`hashCode` contract is foundational; violating it breaks collections.
+2. **[String & StringBuilder](./string-stringbuilder-stringjoiner.md)** — understand immutability and when to use `StringBuilder` over `+`; includes `StringJoiner` and text blocks.
+3. **[Wrapper Classes](./wrapper-classes.md)** — focus on the `Integer.valueOf(-128..127)` caching trap and its `==` implication; autoboxing NPE pitfalls.
+4. **[Math & StrictMath](./math-strictmath.md)** — overflow-safe arithmetic with `addExact`/`toIntExact`; rounding modes and trigonometry conventions.
+5. **[Optional](./optional.md)** — learn what it solves, then learn what it does NOT solve (never use as a field or parameter).
 
 ## Related Domains
 
