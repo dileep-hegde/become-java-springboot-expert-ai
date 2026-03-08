@@ -31,6 +31,7 @@ last_updated: 2026-03-07
 | [Spring Data Q&A](./spring-data-interview-prep.md) | JPA mapping, transaction propagation, N+1 problem, projections, caching, `@Transactional`. |
 | [Spring Security Q&A](./spring-security-interview-prep.md) | Filter chain, OAuth2 flows, JWT validation, method security, CSRF, CORS. |
 | [Web & REST Q&A](./web-interview-prep.md) | HTTP fundamentals, REST design, Spring MVC, exception handling, WebFlux, OpenAPI. |
+| [Databases Q&A](./databases-interview-prep.md) | SQL fundamentals, indexes, ACID, HikariCP, NoSQL trade-offs, Flyway vs Liquibase. |
 | System Design Q&A | Microservices trade-offs, caching, reliability patterns, API design. |
 
 ## How to Use This Section
