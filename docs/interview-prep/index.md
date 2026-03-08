@@ -35,6 +35,7 @@ last_updated: 2026-03-07
 | [Version Control Q&A](./version-control-interview-prep.md) | Git object model, branching strategies, rebase vs. merge, remotes, conflict resolution, hooks. |
 | [System Design Q&A](./system-design-interview-prep.md) | Microservices trade-offs, caching, reliability patterns, API design. |
 | [Testing Q&A](./testing-interview-prep.md) | JUnit 5, Mockito, Spring Boot test slices, integration tests, Testcontainers, MockMvc, WebTestClient. |
+| [Resume-Based Q&A](./resume-interview-prep.md) | Questions mapped to specific resume experiences — Struts migration, Veracode security hardening, Docker/K8s, Apache POI, and STAR behavioral questions. |
 
 ## How to Use This Section
 
