@@ -31,6 +31,7 @@ last_updated: 2026-03-07
 | Spring Data Overview | JPA annotations, repository methods, `@Transactional` propagation table. |
 | Spring Security Overview | Filter chain, auth flow, OAuth2 flows, JWT structure. |
 | [Multithreading Overview](./multithreading-overview.md) | Thread lifecycle, concurrency utilities, `CompletableFuture` cheat-table. |
+| [Java Design Patterns Overview](./java-design-patterns-overview.md) | All 15 GoF patterns — intent, participants, Java/Spring examples, and top interview questions. |
 | System Design Overview | SOLID, microservices trade-offs, caching, reliability patterns. |
 
 ## How to Use These Pages

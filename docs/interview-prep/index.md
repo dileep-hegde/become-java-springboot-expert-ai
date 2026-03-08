@@ -24,6 +24,7 @@ last_updated: 2026-03-07
 | [Exceptions Interview Q&A](./exceptions-interview-prep.md) | Throwable hierarchy, checked vs. unchecked, try/catch/finally, custom exceptions, best practices. |
 | [Functional Programming Q&A](./functional-programming-interview-prep.md) | Lambdas, functional interfaces, method references, Streams, Collectors, parallel streams, `Optional`. |
 | [Multithreading Interview Q&A](./multithreading-interview-prep.md) | `synchronized`, `volatile`, `CompletableFuture`, virtual threads. |
+| [Java Design Patterns Q&A](./java-design-patterns-interview-prep.md) | All 15 GoF patterns — Singleton, Proxy, Strategy, Observer, Template Method, State, and more. |
 | JVM Internals Interview Q&A | GC algorithms, class loading, JIT compilation, memory areas. |
 | Spring Framework Q&A | IoC, DI, AOP, bean scopes, bean lifecycle. |
 | Spring Boot Q&A | Auto-configuration, starters, Actuator, profiles. |
