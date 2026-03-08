@@ -16,15 +16,13 @@ last_updated: 2026-03-07
 
 ## What You'll Find Here
 
-Notes are being added. Planned topics:
-
-| Topic | Description |
-|-------|-------------|
-| Class Loading | Bootstrap → Platform → Application classloaders; loading, linking, initialization phases. |
-| JVM Memory Model | Heap regions (Eden, Survivor, Old gen), stack frames, Metaspace. |
-| Garbage Collection | GC roots, reachability, Serial/Parallel/G1/ZGC algorithms, tuning flags. |
-| JIT Compilation | Interpreter → C1 → C2 tiered compilation; inlining, escape analysis. |
-| Bytecode & .class Files | `javap` disassembler, constant pool, understanding compiled output. |
+| Note | Description |
+|------|-------------|
+| [JVM Memory Model](./jvm-memory-model.md) | Heap regions (Eden, Survivor, Old gen), stack frames, Metaspace, per-thread vs. shared areas. |
+| [Garbage Collection](./garbage-collection.md) | GC roots, reachability, Minor/Major/Full GC, Serial/Parallel/G1/ZGC algorithms, tuning flags. |
+| [Class Loading](./class-loading.md) | Bootstrap → Platform → Application classloaders; parent-delegation model; loading, linking, initialization phases. |
+| [JIT Compilation](./jit-compilation.md) | Interpreter → C1 → C2 tiered compilation; inlining, escape analysis, deoptimisation. |
+| [Bytecode & .class Files](./bytecode.md) | `.class` file structure, constant pool, `javap` disassembler, generics erasure, lambdas via `invokedynamic`. |
 
 ## Learning Path
 
