@@ -40,7 +40,6 @@
 
 .navbar {
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
-  backdrop-filter: blur(8px);
   background: rgba(var(--ifm-background-color-rgb, 255, 255, 255), 0.9);
 }
 
