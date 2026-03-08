@@ -7,7 +7,7 @@ tags:
   - java
   - spring-boot
   - overview
-last_updated: 2026-03-07
+last_updated: 2026-03-08
 ---
 
 # Overviews
@@ -34,6 +34,7 @@ last_updated: 2026-03-07
 | [Multithreading Overview](./multithreading-overview.md) | Thread lifecycle, concurrency utilities, `CompletableFuture` cheat-table. |
 | [Java Design Patterns Overview](./java-design-patterns-overview.md) | All 15 GoF patterns — intent, participants, Java/Spring examples, and top interview questions. |
 | [Databases Overview](./databases-overview.md) | SQL, indexes, ACID, HikariCP, NoSQL trade-offs, Flyway/Liquibase migration. |
+| [Version Control Overview](./version-control-overview.md) | Git object model, branching strategies, rebase vs. merge, remotes, conflict resolution, hooks. |
 | System Design Overview | SOLID, microservices trade-offs, caching, reliability patterns. |
 
 ## How to Use These Pages
