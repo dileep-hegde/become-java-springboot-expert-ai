@@ -20,6 +20,8 @@ last_updated: 2026-03-07
 |--------|----------------|
 | [Core Java Overview](./core-java-overview.md) | Variables, type system, collections, streams, concurrency at a glance. |
 | [OOP Overview](./oops-overview.md) | Classes, encapsulation, inheritance, polymorphism, abstraction, records, sealed classes. |
+| [Java Type System Overview](./java-type-system-overview.md) | Primitives, autoboxing, generics, wildcards, type erasure, and type inference. |
+| [Core APIs Overview](./core-apis-overview.md) | Object contract, String/StringBuilder, Math overflow-safe methods, wrappers, Optional. |
 | JVM Overview | Memory model, GC algorithms, class loading, JIT — tuning flags and diagnostics. |
 | Spring Framework Overview | IoC, DI, AOP, bean lifecycle, scopes — key APIs and annotations. |
 | Spring Boot Overview | Auto-configuration, starters, profiles, Actuator, testing slices. |
