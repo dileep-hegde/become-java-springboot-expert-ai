@@ -15,26 +15,27 @@ last_updated: 2026-03-07
 
 ## What You'll Find Here
 
-Notes are being added. Planned topics:
-
 | Topic | Description |
 |-------|-------------|
-| Threads & Lifecycle | `Thread`, `Runnable`, lifecycle states, `start`/`join`/`interrupt`. |
-| Synchronization | `synchronized`, intrinsic locks, `volatile`, happens-before. |
-| Wait / Notify | Object monitor-based coordination; spurious wakeup rule. |
-| java.util.concurrent | `ExecutorService`, `Future`, `CompletableFuture`, `CountDownLatch`. |
-| Locks | `ReentrantLock`, `ReadWriteLock`, `StampedLock` — explicit locking. |
-| Atomic Variables | `AtomicInteger`, `AtomicReference`, `LongAdder` — lock-free CAS operations. |
-| Thread Safety Patterns | Immutability, `ThreadLocal`, confinement. |
-| Virtual Threads (Java 21+) | Project Loom — `Thread.ofVirtual()`, pinning, structured concurrency. |
+| [Threads & Lifecycle](./threads-and-lifecycle.md) | `Thread`, `Runnable`, lifecycle states, `start`/`join`/`interrupt`, daemon threads. |
+| [Synchronization](./synchronization.md) | `synchronized`, intrinsic locks, `volatile`, happens-before, double-checked locking. |
+| [Wait / Notify](./wait-notify.md) | Object monitor-based coordination; spurious wakeup rule; `notify` vs `notifyAll`. |
+| [java.util.concurrent](./java-util-concurrent.md) | `ExecutorService`, `Future`, `CompletableFuture`, `CountDownLatch`, `Semaphore`. |
+| [Locks](./locks.md) | `ReentrantLock`, `ReadWriteLock`, `StampedLock` — explicit locking with fine control. |
+| [Atomic Variables](./atomic-variables.md) | `AtomicInteger`, `AtomicReference`, `LongAdder` — lock-free CAS operations. |
+| [Thread Safety Patterns](./thread-safety-patterns.md) | Immutability, `ThreadLocal`, confinement, safe publication. |
+| [Virtual Threads (Java 21+)](./virtual-threads.md) | Project Loom — `Thread.ofVirtual()`, pinning, structured concurrency. |
 
 ## Learning Path
 
-1. **Threads & Lifecycle** — understand the NEW → RUNNABLE → BLOCKED/WAITING → TERMINATED state machine.
-2. **Synchronization** — `synchronized` and `volatile` are the most tested fundamentals.
-3. **java.util.concurrent** — `ExecutorService` replaces manual thread management; `CompletableFuture` handles async pipelines.
-4. **Locks & Atomic Variables** — needed for high-performance scenarios requiring more control than `synchronized`.
-5. **Virtual Threads** — finish here; they require a solid understanding of platform threads to appreciate the difference.
+1. **[Threads & Lifecycle](./threads-and-lifecycle.md)** — understand the NEW → RUNNABLE → BLOCKED/WAITING → TERMINATED state machine.
+2. **[Synchronization](./synchronization.md)** — `synchronized` and `volatile` are the most tested fundamentals.
+3. **[Wait / Notify](./wait-notify.md)** — the old-school coordination mechanism; needed to understand what `BlockingQueue` replaces.
+4. **[java.util.concurrent](./java-util-concurrent.md)** — `ExecutorService` replaces manual thread management; `CompletableFuture` handles async pipelines.
+5. **[Locks](./locks.md)** — explicit locking for timed, interruptible, or multi-condition scenarios.
+6. **[Atomic Variables](./atomic-variables.md)** — lock-free CAS for high-throughput counters and flags.
+7. **[Thread Safety Patterns](./thread-safety-patterns.md)** — design-level strategies that eliminate the need for locks entirely.
+8. **[Virtual Threads (Java 21+)](./virtual-threads.md)** — finish here; requires a solid understanding of platform threads to appreciate the difference.
 
 ## Related Domains
 
