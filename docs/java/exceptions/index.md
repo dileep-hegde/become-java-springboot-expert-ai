@@ -15,21 +15,19 @@ last_updated: 2026-03-07
 
 ## What You'll Find Here
 
-Notes are being added. Planned topics:
-
 | Topic | Description |
 |-------|-------------|
-| Exception Hierarchy | `Throwable → Error vs. Exception`; checked vs. unchecked (`RuntimeException`). |
-| try / catch / finally | Multi-catch `\|`, `finally` guarantees, `try-with-resources`. |
-| Custom Exceptions | Creating domain-specific exceptions; adding context and cause chaining. |
-| Best Practices | Fail-fast, don't swallow exceptions, when to use checked vs. unchecked. |
+| [Exception Hierarchy](./exception-hierarchy.md) | `Throwable → Error vs. Exception`; checked vs. unchecked (`RuntimeException`). |
+| [try / catch / finally](./try-catch-finally.md) | Multi-catch `\|`, `finally` guarantees, `try-with-resources`, suppressed exceptions. |
+| [Custom Exceptions](./custom-exceptions.md) | Creating domain-specific exceptions; typed fields; hierarchy design; Spring `@ControllerAdvice` integration. |
+| [Exception Best Practices](./exception-best-practices.md) | Fail-fast, never swallow, log-once, `InterruptedException`, and the checked vs. unchecked design decision. |
 
 ## Learning Path
 
-1. **Exception Hierarchy** — understand the `Throwable` tree; know that `Error` should never be caught.
-2. **try / catch / finally** — learn `try-with-resources` first since it eliminates most explicit `finally` blocks.
-3. **Custom Exceptions** — wrapping causes with `initCause` preserves diagnostic context; missing this is a common error.
-4. **Best Practices** — the "never swallow" rule and the checked exception controversy are recurring interview topics.
+1. **[Exception Hierarchy](./exception-hierarchy.md)** — understand the `Throwable` tree; know that `Error` should never be caught.
+2. **[try / catch / finally](./try-catch-finally.md)** — learn `try-with-resources` first since it eliminates most explicit `finally` blocks.
+3. **[Custom Exceptions](./custom-exceptions.md)** — wrapping causes with the `(String, Throwable)` constructor preserves the root cause; missing this is the #1 exception anti-pattern.
+4. **[Exception Best Practices](./exception-best-practices.md)** — the "never swallow" rule and the checked exception controversy are recurring interview topics.
 
 ## Related Domains
 

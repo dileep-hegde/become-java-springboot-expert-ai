@@ -21,6 +21,7 @@ last_updated: 2026-03-07
 | [Core Java Interview Q&A](./core-java-interview-prep.md) | Variables, operators, OOP, type system, String, Collections fundamentals. |
 | [OOP Interview Q&A](./oops-interview-prep.md) | Classes, encapsulation, inheritance, polymorphism, abstraction, records, sealed classes. |
 | [Core APIs Interview Q&A](./core-apis-interview-prep.md) | Object class contract, String/StringBuilder, Math, wrapper types, Optional patterns. |
+| [Exceptions Interview Q&A](./exceptions-interview-prep.md) | Throwable hierarchy, checked vs. unchecked, try/catch/finally, custom exceptions, best practices. |
 | Multithreading Interview Q&A | `synchronized`, `volatile`, `CompletableFuture`, virtual threads. |
 | JVM Internals Interview Q&A | GC algorithms, class loading, JIT compilation, memory areas. |
 | Functional Programming Q&A | Lambdas, Streams, method references, `Optional`. |
