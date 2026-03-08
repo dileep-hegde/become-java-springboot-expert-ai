@@ -35,7 +35,7 @@ last_updated: 2026-03-08
 | [Java Design Patterns Overview](./java-design-patterns-overview.md) | All 15 GoF patterns — intent, participants, Java/Spring examples, and top interview questions. |
 | [Databases Overview](./databases-overview.md) | SQL, indexes, ACID, HikariCP, NoSQL trade-offs, Flyway/Liquibase migration. |
 | [Version Control Overview](./version-control-overview.md) | Git object model, branching strategies, rebase vs. merge, remotes, conflict resolution, hooks. |
-| System Design Overview | SOLID, microservices trade-offs, caching, reliability patterns. |
+| [System Design Overview](./system-design-overview.md) | SOLID, microservices trade-offs, caching, reliability patterns. |
 
 ## How to Use These Pages
 

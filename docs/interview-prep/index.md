@@ -33,7 +33,7 @@ last_updated: 2026-03-07
 | [Web & REST Q&A](./web-interview-prep.md) | HTTP fundamentals, REST design, Spring MVC, exception handling, WebFlux, OpenAPI. |
 | [Databases Q&A](./databases-interview-prep.md) | SQL fundamentals, indexes, ACID, HikariCP, NoSQL trade-offs, Flyway vs Liquibase. |
 | [Version Control Q&A](./version-control-interview-prep.md) | Git object model, branching strategies, rebase vs. merge, remotes, conflict resolution, hooks. |
-| System Design Q&A | Microservices trade-offs, caching, reliability patterns, API design. |
+| [System Design Q&A](./system-design-interview-prep.md) | Microservices trade-offs, caching, reliability patterns, API design. |
 
 ## How to Use This Section
 
