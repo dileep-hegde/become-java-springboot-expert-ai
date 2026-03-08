@@ -36,6 +36,7 @@ last_updated: 2026-03-08
 | [Databases Overview](./databases-overview.md) | SQL, indexes, ACID, HikariCP, NoSQL trade-offs, Flyway/Liquibase migration. |
 | [Version Control Overview](./version-control-overview.md) | Git object model, branching strategies, rebase vs. merge, remotes, conflict resolution, hooks. |
 | [System Design Overview](./system-design-overview.md) | SOLID, microservices trade-offs, caching, reliability patterns. |
+| [Testing Overview](./testing-overview.md) | JUnit 5, Mockito, Spring Boot test slices, Testcontainers, MockMvc — the full testing pyramid. |
 
 ## How to Use These Pages
 

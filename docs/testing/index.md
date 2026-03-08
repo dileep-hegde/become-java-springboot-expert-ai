@@ -7,7 +7,7 @@ tags:
   - java
   - spring-boot
   - overview
-last_updated: 2026-03-07
+last_updated: 2026-03-08
 ---
 
 # Testing
@@ -16,24 +16,28 @@ last_updated: 2026-03-07
 
 ## What You'll Find Here
 
-Notes are being added. Planned topics:
-
 | Topic | Description |
 |-------|-------------|
-| JUnit 5 | `@Test`, `@ParameterizedTest`, `@BeforeEach`, lifecycle, assertions, assumptions. |
-| Mockito | `@Mock`, `@InjectMocks`, `when(...).thenReturn(...)`, `verify`, `ArgumentCaptor`. |
-| Spring Boot Test Slices | `@WebMvcTest`, `@DataJpaTest`, `@JsonTest` — fast partial-context tests. |
-| Integration Tests | `@SpringBootTest` with `TestRestTemplate`; full-context tests. |
-| Testcontainers | Running real PostgreSQL, MySQL, Redis, Kafka in Docker containers during tests. |
-| MockMvc & WebTestClient | HTTP-level controller testing without a running server. |
+| [JUnit 5](./junit5.md) | `@Test`, `@ParameterizedTest`, `@BeforeEach`, lifecycle, assertions, assumptions. |
+| [Mockito](./mockito.md) | `@Mock`, `@InjectMocks`, `when(...).thenReturn(...)`, `verify`, `ArgumentCaptor`. |
+| [Spring Boot Test Slices](./spring-boot-test-slices.md) | `@WebMvcTest`, `@DataJpaTest`, `@JsonTest` — fast partial-context tests. |
+| [Integration Tests](./integration-tests.md) | `@SpringBootTest` with `TestRestTemplate`; full-context tests. |
+| [Testcontainers](./testcontainers.md) | Running real PostgreSQL, MySQL, Redis, Kafka in Docker containers during tests. |
+| [MockMvc & WebTestClient](./mockmvc-webtestclient.md) | HTTP-level controller testing without a running server. |
 
 ## Learning Path
 
-1. **JUnit 5** — the basics (`@Test`, `@BeforeEach`, `assertThrows`) are required before everything else.
-2. **Mockito** — `@Mock` stub setup and `verify` interaction testing are the day-to-day tools.
-3. **MockMvc** — test Spring MVC controllers without a real server; use with `@WebMvcTest` for speed.
-4. **@DataJpaTest** — test repositories with an in-memory H2 database (or Testcontainers for realism).
-5. **Testcontainers** — the current gold standard for integration tests; Docker-based environments that match production.
+1. **[JUnit 5](./junit5.md)** — the basics (`@Test`, `@BeforeEach`, `assertThrows`) are required before everything else.
+2. **[Mockito](./mockito.md)** — `@Mock` stub setup and `verify` interaction testing are the day-to-day tools.
+3. **[Spring Boot Test Slices](./spring-boot-test-slices.md)** — `@WebMvcTest` and `@DataJpaTest` for fast, focused Spring tests.
+4. **[MockMvc & WebTestClient](./mockmvc-webtestclient.md)** — test Spring MVC controllers without a real server; use with `@WebMvcTest` for speed.
+5. **[Testcontainers](./testcontainers.md)** — the current gold standard for integration tests; Docker-based environments that match production.
+6. **[Integration Tests](./integration-tests.md)** — `@SpringBootTest` full-stack tests that tie all the above together.
+
+## Quick Revision
+
+- [Testing Overview](../overviews/testing-overview.md) — key concepts, quick-reference table, and top 5 interview questions on one page.
+- [Testing Interview Questions](../interview-prep/testing-interview-prep.md) — 20 Q&A questions organized by Beginner / Intermediate / Advanced.
 
 ## Related Domains
 
