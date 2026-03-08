@@ -15,15 +15,13 @@ last_updated: 2026-03-07
 
 ## What You'll Find Here
 
-Notes are being added. Planned topics:
-
 | Topic | Description |
 |-------|-------------|
-| Primitives vs. Objects | Stack vs. heap, `null` safety, autoboxing/unboxing pitfalls. |
-| Generics | `<T>` syntax, bounded type parameters, generic methods and classes. |
-| Wildcards | `? extends T` (producer), `? super T` (consumer), PECS rule. |
-| Type Erasure | Why generics are compile-time only; reflection and `instanceof` implications. |
-| Type Inference | `var` (Java 10+), diamond operator `<>`, lambda target typing. |
+| [Primitives vs. Objects](./primitives-vs-objects.md) | Stack vs. heap, `null` safety, autoboxing/unboxing pitfalls, the Integer cache. |
+| [Generics](./generics.md) | `<T>` syntax, bounded type parameters, generic methods, classes, and interfaces. |
+| [Wildcards](./wildcards.md) | `? extends T` (producer), `? super T` (consumer), PECS rule, unbounded `<?>`. |
+| [Type Erasure](./type-erasure.md) | Why generics are compile-time only; bridge methods, heap pollution, super type tokens. |
+| [Type Inference](./type-inference.md) | `var` (Java 10+), diamond operator `<>`, generic method inference, lambda target typing. |
 
 ## Learning Path
 
