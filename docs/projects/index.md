@@ -24,4 +24,8 @@ Reading reference documentation is one thing; following a real project from firs
 
 ## How to Use These Walkthroughs
 
-Each project is broken into focused notes — one per layer or concern. Work through them in the order listed in each project's learning path. The source code lives in `projects/<project-name>/` at the repository root.
+Each project is broken into focused notes — one per layer or concern. Work through them in the order listed in each project's learning path.
+
+## Quick Revision
+
+- [Projects Overview](../overviews/projects-overview.md) — architecture, business rules, design decisions, and top 5 interview questions on one page.

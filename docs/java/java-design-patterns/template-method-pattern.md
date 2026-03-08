@@ -66,10 +66,6 @@ flowchart TD
 
 ## Code Examples
 
-:::tip Practical Demo
-See [Template Method Pattern Demo](./demo/template-method-pattern-demo.md) for runnable examples: DataExporter, hook methods, `JdbcTemplate` callback style, and Spring Security filter examples.
-:::
-
 ### Data Exporter
 
 ```java

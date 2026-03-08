@@ -37,6 +37,7 @@ last_updated: 2026-03-08
 | [Version Control Overview](./version-control-overview.md) | Git object model, branching strategies, rebase vs. merge, remotes, conflict resolution, hooks. |
 | [System Design Overview](./system-design-overview.md) | SOLID, microservices trade-offs, caching, reliability patterns. |
 | [Testing Overview](./testing-overview.md) | JUnit 5, Mockito, Spring Boot test slices, Testcontainers, MockMvc — the full testing pyramid. |
+| [Projects Overview](./projects-overview.md) | Loan Application Evaluator — architecture, business rules, design decisions, and top interview talking points. |
 
 ## How to Use These Pages
 

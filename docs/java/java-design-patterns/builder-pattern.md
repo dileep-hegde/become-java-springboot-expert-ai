@@ -287,4 +287,4 @@ public static class UserBuilder {
 
 - [Singleton Pattern](./singleton-pattern.md) — another creational pattern; often Singleton configuration holders are built with the Builder pattern.
 - [Factory Method Pattern](./factory-method-pattern.md) — Factory creates one of several types; Builder assembles one complex type step-by-step. Often confused in interviews.
-- [Java Records](../java-evolution/java-records.md) — Java 16+ records are an alternative to Builder for simple immutable value objects; records don't need a Builder for small field counts.
+- [Java Evolution](../java-evolution/index.md) — Java 16+ records are an alternative to Builder for simple immutable value objects; records don't need a Builder for small field counts.
