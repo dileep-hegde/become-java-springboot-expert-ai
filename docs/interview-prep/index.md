@@ -29,7 +29,7 @@ last_updated: 2026-03-07
 | [Spring Framework Q&A](./spring-framework-interview-prep.md) | IoC, DI, AOP, bean scopes, bean lifecycle, events — proxy internals and transactional events. |
 | [Spring Boot Q&A](./spring-boot-interview-prep.md) | Auto-configuration, starters, Actuator, profiles, testing slices. |
 | [Spring Data Q&A](./spring-data-interview-prep.md) | JPA mapping, transaction propagation, N+1 problem, projections, caching, `@Transactional`. |
-| Spring Security Q&A | Filter chain, OAuth2 flows, JWT validation, method security. |
+| [Spring Security Q&A](./spring-security-interview-prep.md) | Filter chain, OAuth2 flows, JWT validation, method security, CSRF, CORS. |
 | System Design Q&A | Microservices trade-offs, caching, reliability patterns, API design. |
 
 ## How to Use This Section

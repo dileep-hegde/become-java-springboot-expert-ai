@@ -29,7 +29,7 @@ last_updated: 2026-03-07
 | [Spring Framework Overview](./spring-framework-overview.md) | IoC, DI, AOP, bean lifecycle, scopes, events — key APIs and annotations. |
 | [Spring Boot Overview](./spring-boot-overview.md) | Auto-configuration, starters, profiles, Actuator, testing slices. |
 | [Spring Data Overview](./spring-data-overview.md) | JPA annotations, repository methods, `@Transactional` propagation table, N+1 fixes, projection types. |
-| Spring Security Overview | Filter chain, auth flow, OAuth2 flows, JWT structure. |
+| [Spring Security Overview](./spring-security-overview.md) | Filter chain, auth flow, JWT, OAuth2/OIDC flows, CSRF and CORS configuration. |
 | [Multithreading Overview](./multithreading-overview.md) | Thread lifecycle, concurrency utilities, `CompletableFuture` cheat-table. |
 | [Java Design Patterns Overview](./java-design-patterns-overview.md) | All 15 GoF patterns — intent, participants, Java/Spring examples, and top interview questions. |
 | System Design Overview | SOLID, microservices trade-offs, caching, reliability patterns. |
