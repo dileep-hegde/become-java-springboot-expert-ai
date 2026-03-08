@@ -27,7 +27,7 @@ last_updated: 2026-03-07
 | [Java Design Patterns Q&A](./java-design-patterns-interview-prep.md) | All 15 GoF patterns — Singleton, Proxy, Strategy, Observer, Template Method, State, and more. |
 | JVM Internals Interview Q&A | GC algorithms, class loading, JIT compilation, memory areas. |
 | [Spring Framework Q&A](./spring-framework-interview-prep.md) | IoC, DI, AOP, bean scopes, bean lifecycle, events — proxy internals and transactional events. |
-| Spring Boot Q&A | Auto-configuration, starters, Actuator, profiles. |
+| [Spring Boot Q&A](./spring-boot-interview-prep.md) | Auto-configuration, starters, Actuator, profiles, testing slices. |
 | Spring Data Q&A | JPA mapping, transaction propagation, N+1 problem, `@Transactional`. |
 | Spring Security Q&A | Filter chain, OAuth2 flows, JWT validation, method security. |
 | System Design Q&A | Microservices trade-offs, caching, reliability patterns, API design. |

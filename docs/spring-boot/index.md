@@ -6,7 +6,7 @@ sidebar_position: 1
 tags:
   - spring-boot
   - overview
-last_updated: 2026-03-07
+last_updated: 2026-03-08
 ---
 
 # Spring Boot
@@ -15,23 +15,21 @@ last_updated: 2026-03-07
 
 ## What You'll Find Here
 
-Notes are being added. Planned topics:
-
 | Topic | Description |
 |-------|-------------|
-| Auto-Configuration | `@SpringBootApplication`, `@EnableAutoConfiguration`, `@ConditionalOn*` conditions. |
-| Application Properties | `application.yml`, profiles, `@ConfigurationProperties`, `@Value`. |
-| Spring Boot Starters | What's in a starter; common starters (`web`, `data-jpa`, `security`, `test`, `actuator`). |
-| Actuator | Built-in endpoints (`/health`, `/metrics`); custom health indicators; securing endpoints. |
-| Spring Boot Testing | `@SpringBootTest`, test slices (`@WebMvcTest`, `@DataJpaTest`), `@MockBean`. |
+| [Auto-Configuration](./auto-configuration.md) | `@SpringBootApplication`, `@EnableAutoConfiguration`, `@ConditionalOn*` conditions. |
+| [Application Properties](./application-properties.md) | `application.yml`, profiles, `@ConfigurationProperties`, `@Value`. |
+| [Spring Boot Starters](./spring-boot-starters.md) | What's in a starter; common starters (`web`, `data-jpa`, `security`, `test`, `actuator`). |
+| [Actuator](./actuator.md) | Built-in endpoints (`/health`, `/metrics`); custom health indicators; securing endpoints. |
+| [Spring Boot Testing](./spring-boot-testing.md) | `@SpringBootTest`, test slices (`@WebMvcTest`, `@DataJpaTest`), `@MockBean`. |
 
 ## Learning Path
 
-1. **Auto-Configuration** — understanding `@ConditionalOnClass` and `@ConditionalOnMissingBean` demystifies 90% of Boot magic.
-2. **Application Properties** — `@ConfigurationProperties` replaces scattered `@Value` for structured config; learn both.
-3. **Starters** — know what `spring-boot-starter-web` wires up (Tomcat, Jackson, Spring MVC).
-4. **Actuator** — essential for production; understand which endpoints to expose and how to secure them.
-5. **Testing** — `@WebMvcTest` and `@DataJpaTest` slices are faster than `@SpringBootTest`; know when to use each.
+1. **[Auto-Configuration](./auto-configuration.md)** — understanding `@ConditionalOnClass` and `@ConditionalOnMissingBean` demystifies 90% of Boot magic.
+2. **[Application Properties](./application-properties.md)** — `@ConfigurationProperties` replaces scattered `@Value` for structured config; learn both.
+3. **[Starters](./spring-boot-starters.md)** — know what `spring-boot-starter-web` wires up (Tomcat, Jackson, Spring MVC).
+4. **[Actuator](./actuator.md)** — essential for production; understand which endpoints to expose and how to secure them.
+5. **[Testing](./spring-boot-testing.md)** — `@WebMvcTest` and `@DataJpaTest` slices are faster than `@SpringBootTest`; know when to use each.
 
 ## Related Domains
 
