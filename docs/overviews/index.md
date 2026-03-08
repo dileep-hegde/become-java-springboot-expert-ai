@@ -22,7 +22,9 @@ last_updated: 2026-03-07
 | [OOP Overview](./oops-overview.md) | Classes, encapsulation, inheritance, polymorphism, abstraction, records, sealed classes. |
 | [Java Type System Overview](./java-type-system-overview.md) | Primitives, autoboxing, generics, wildcards, type erasure, and type inference. |
 | [Core APIs Overview](./core-apis-overview.md) | Object contract, String/StringBuilder, Math overflow-safe methods, wrappers, Optional. |
+| [Collections Framework Overview](./collections-framework-overview.md) | List, Set, Map hierarchy, iterators, Comparable vs Comparator, immutable collections. |
 | [Exceptions Overview](./exceptions-overview.md) | Throwable hierarchy, checked vs. unchecked, try-with-resources, custom exceptions, best practices. |
+| [Functional Programming Overview](./functional-programming-overview.md) | Lambdas, functional interfaces, method references, Streams, Collectors, Optional — Java 8+ essentials. |
 | JVM Overview | Memory model, GC algorithms, class loading, JIT — tuning flags and diagnostics. |
 | Spring Framework Overview | IoC, DI, AOP, bean lifecycle, scopes — key APIs and annotations. |
 | Spring Boot Overview | Auto-configuration, starters, profiles, Actuator, testing slices. |

@@ -15,25 +15,25 @@ last_updated: 2026-03-07
 
 ## What You'll Find Here
 
-Notes are being added. Planned topics:
-
 | Topic | Description |
 |-------|-------------|
-| Lambdas | `(params) -> expression` syntax, effectively-final capture, `this` behavior. |
-| Functional Interfaces | `@FunctionalInterface`, `Function`, `Predicate`, `Consumer`, `Supplier`. |
-| Method References | Static, instance, constructor references — when to prefer over lambdas. |
-| Streams API | Pipeline anatomy — source, intermediate ops (`filter`, `map`, `flatMap`), terminal ops. |
-| Collectors | `toList`, `groupingBy`, `joining`, `counting`, custom collectors. |
-| Parallel Streams | When parallel helps vs. hurts — ordering, side effects, ForkJoin pool. |
-| Optional Deep Dive | Correct usage patterns; anti-patterns (field types, method parameters). |
+| [Lambdas](./lambdas.md) | `(params) -> expression` syntax, effectively-final capture, `this` behavior. |
+| [Functional Interfaces](./functional-interfaces.md) | `@FunctionalInterface`, `Function`, `Predicate`, `Consumer`, `Supplier`. |
+| [Method References](./method-references.md) | Static, instance, constructor references — when to prefer over lambdas. |
+| [Streams API](./streams-api.md) | Pipeline anatomy — source, intermediate ops (`filter`, `map`, `flatMap`), terminal ops. |
+| [Collectors](./collectors.md) | `toList`, `groupingBy`, `joining`, `counting`, custom collectors. |
+| [Parallel Streams](./parallel-streams.md) | When parallel helps vs. hurts — ordering, side effects, ForkJoin pool. |
+| [Optional Deep Dive](./optional.md) | Correct usage patterns; anti-patterns (field types, method parameters). |
 
 ## Learning Path
 
-1. **Lambdas** — understand syntax and effectively-final capture before going further.
-2. **Functional Interfaces** — `Function<T,R>`, `Predicate<T>`, and `Consumer<T>` are the backbone of the Streams API.
-3. **Streams API** — the pipeline model (lazy evaluation + one terminal op) is the core concept.
-4. **Collectors** — `groupingBy` and `toMap` are the collectors most likely to appear in interviews.
-5. **Parallel Streams** — study AFTER understanding sequential streams; parallelism introduces correctness risks.
+1. **[Lambdas](./lambdas.md)** — understand syntax and effectively-final capture before going further.
+2. **[Functional Interfaces](./functional-interfaces.md)** — `Function<T,R>`, `Predicate<T>`, and `Consumer<T>` are the backbone of the Streams API.
+3. **[Method References](./method-references.md)** — the concise alternative to lambdas; know all four kinds.
+4. **[Streams API](./streams-api.md)** — the pipeline model (lazy evaluation + one terminal op) is the core concept.
+5. **[Collectors](./collectors.md)** — `groupingBy` and `toMap` are the collectors most likely to appear in interviews.
+6. **[Optional Deep Dive](./optional.md)** — return type design and safe value retrieval patterns.
+7. **[Parallel Streams](./parallel-streams.md)** — study AFTER understanding sequential streams; parallelism introduces correctness risks.
 
 ## Related Domains
 
