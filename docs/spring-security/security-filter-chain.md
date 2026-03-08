@@ -110,7 +110,9 @@ sequenceDiagram
     ETF->>AZ: check access rules
     AZ->>App: access granted
     App-->>C: 200 OK + response body
-    Note over ETF: If auth fails → 401; if access denied → 403
+```
+
+*Note: If authentication fails the response is 401; if access is denied the response is 403.*
 ```
 
 *Authentication happens first; authorization is the last gate before the controller runs.*
