@@ -26,7 +26,7 @@ last_updated: 2026-03-07
 | [Exceptions Overview](./exceptions-overview.md) | Throwable hierarchy, checked vs. unchecked, try-with-resources, custom exceptions, best practices. |
 | [Functional Programming Overview](./functional-programming-overview.md) | Lambdas, functional interfaces, method references, Streams, Collectors, Optional — Java 8+ essentials. |
 | JVM Overview | Memory model, GC algorithms, class loading, JIT — tuning flags and diagnostics. |
-| Spring Framework Overview | IoC, DI, AOP, bean lifecycle, scopes — key APIs and annotations. |
+| [Spring Framework Overview](./spring-framework-overview.md) | IoC, DI, AOP, bean lifecycle, scopes, events — key APIs and annotations. |
 | Spring Boot Overview | Auto-configuration, starters, profiles, Actuator, testing slices. |
 | Spring Data Overview | JPA annotations, repository methods, `@Transactional` propagation table. |
 | Spring Security Overview | Filter chain, auth flow, OAuth2 flows, JWT structure. |

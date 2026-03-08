@@ -15,16 +15,14 @@ last_updated: 2026-03-07
 
 ## What You'll Find Here
 
-Notes are being added. Planned topics:
-
-| Topic | Description |
-|-------|-------------|
-| IoC Container | `ApplicationContext` vs. `BeanFactory`; `@ComponentScan`; bean definition and registration. |
-| Dependency Injection | Constructor vs. field vs. setter injection; `@Qualifier`, `@Primary`, `@Autowired`. |
-| Bean Lifecycle | `@PostConstruct`, `@PreDestroy`, `InitializingBean`, `DisposableBean`. |
-| Bean Scopes | `singleton`, `prototype`, web scopes (`request`, `session`), scoped proxies. |
-| Spring AOP | Aspects, pointcuts, advice types (`@Before`, `@Around`); JDK proxy vs. CGLIB. |
-| Spring Events | `ApplicationEventPublisher`, `@EventListener`, async events with `@Async`. |
+| Note | Description |
+|------|-------------|
+| [IoC Container](./ioc-container.md) | `ApplicationContext` vs. `BeanFactory`; `@ComponentScan`; bean definition and registration. |
+| [Dependency Injection](./dependency-injection.md) | Constructor vs. field vs. setter injection; `@Qualifier`, `@Primary`, `@Autowired`. |
+| [Bean Lifecycle](./bean-lifecycle.md) | `@PostConstruct`, `@PreDestroy`, `InitializingBean`, `DisposableBean`, `BeanPostProcessor`. |
+| [Bean Scopes](./bean-scopes.md) | `singleton`, `prototype`, web scopes (`request`, `session`), scoped proxies. |
+| [Spring AOP](./spring-aop.md) | Aspects, pointcuts, advice types (`@Before`, `@Around`); JDK proxy vs. CGLIB; self-invocation trap. |
+| [Spring Events](./spring-events.md) | `ApplicationEventPublisher`, `@EventListener`, `@TransactionalEventListener`, async events. |
 
 ## Learning Path
 
