@@ -219,6 +219,22 @@ code {
   background: rgba(255,255,255,0.02);
 }
 
+/* Make comments and similar tokens a muted grey (override prism theme) */
+.prism-code .token.comment,
+.prism-code .token.prolog,
+.prism-code .token.doctype,
+.prism-code .token.cdata {
+  color: rgba(156,163,175,1) !important; /* muted slate */
+  font-style: italic;
+}
+
+[data-theme='dark'] .prism-code .token.comment,
+[data-theme='dark'] .prism-code .token.prolog,
+[data-theme='dark'] .prism-code .token.doctype,
+[data-theme='dark'] .prism-code .token.cdata {
+  color: rgb(110, 110, 110) !important; /* slightly lighter muted grey for dark bg */
+}
+
 /* ---------------------------------------------------------
    Mermaid Diagrams
 --------------------------------------------------------- */
