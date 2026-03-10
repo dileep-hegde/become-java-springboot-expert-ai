@@ -35,8 +35,7 @@ const config: Config = {
     [
       'classic',
       {
-        docs: {
-          breadcrumbs: false,
+        docs: {          
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/dileep-hegde/become-java-springboot-expert-ai/edit/main/',
           showLastUpdateTime: true,

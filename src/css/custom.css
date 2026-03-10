@@ -119,3 +119,13 @@ blockquote {
   border-left: none;
   padding: 0;
 }
+
+.menu__list {
+  border-left: 1px solid var(--ifm-color-emphasis-200);
+  padding: 0px 15px;
+}
+
+.theme-doc-sidebar-menu.menu__list{
+  border-left: none;
+  padding: 0;
+}
