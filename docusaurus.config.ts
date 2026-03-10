@@ -59,7 +59,7 @@ const config: Config = {
         pwaHead: [
           { tagName: 'link', rel: 'icon', href: '/img/favicon.ico' },
           { tagName: 'link', rel: 'manifest', href: '/manifest.json' },
-          { tagName: 'meta', name: 'theme-color', content: '#ffffff' },
+          { tagName: 'meta', name: 'theme-color', content: '#1e1e1e' },
         ],
       },
     ],

@@ -2,7 +2,7 @@
 id: working-with-remotes
 title: Working with Remotes
 description: How Git remotes work under the hood — fetch vs. pull, push, remote-tracking branches, upstream conventions, and collaborating safely with a team via GitHub or GitLab.
-sidebar_position: 5
+sidebar_position: 6
 tags:
   - java
   - beginner

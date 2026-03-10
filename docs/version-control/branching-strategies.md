@@ -2,7 +2,7 @@
 id: branching-strategies
 title: Branching Strategies
 description: A comparison of Git Flow, GitHub Flow, and trunk-based development — what each model is, when to use it, and how it shapes your CI/CD pipeline.
-sidebar_position: 3
+sidebar_position: 4
 tags:
   - java
   - intermediate

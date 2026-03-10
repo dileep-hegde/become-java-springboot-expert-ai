@@ -2,7 +2,7 @@
 id: git-hooks-workflows
 title: Git Hooks and Workflows
 description: How Git hooks let you automate quality checks at every stage of the commit and push lifecycle — pre-commit linting, commit-msg validation, pre-push tests, and managing hooks across a team with tools like pre-commit.
-sidebar_position: 7
+sidebar_position: 8
 tags:
   - java
   - intermediate

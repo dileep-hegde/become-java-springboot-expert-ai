@@ -2,7 +2,7 @@
 id: conflict-resolution
 title: Conflict Resolution
 description: How Git detects and marks merge conflicts, what three-way merge means, how to resolve conflicts efficiently with rerere and merge tools, and strategies to avoid them in the first place.
-sidebar_position: 6
+sidebar_position: 7
 tags:
   - java
   - intermediate

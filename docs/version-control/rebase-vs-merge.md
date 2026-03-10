@@ -2,7 +2,7 @@
 id: rebase-vs-merge
 title: Rebase vs. Merge
 description: The difference between git merge and git rebase — when each produces a better history, how interactive rebase cleans up commits, and the golden rule you must never break.
-sidebar_position: 4
+sidebar_position: 5
 tags:
   - java
   - intermediate

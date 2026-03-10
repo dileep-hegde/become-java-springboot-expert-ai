@@ -1,7 +1,7 @@
 ---
 id: version-control-overview
 title: Version Control Overview
-description: Quick-reference summary of Git internals, branching strategies, rebase vs. merge, remotes, conflict resolution, and hooks for Java backend engineers.
+description: Quick-reference summary of Git basics, object model internals, branching strategies, rebase vs. merge, remotes, conflict resolution, and hooks for Java backend engineers.
 sidebar_position: 16
 tags:
   - java
@@ -9,7 +9,7 @@ tags:
   - version-control
   - overview
   - intermediate
-last_updated: 2026-03-08
+last_updated: 2026-03-10
 ---
 
 # Version Control Overview
@@ -18,9 +18,14 @@ last_updated: 2026-03-08
 
 ## Key Concepts at a Glance
 
-- **Git object store**: a key-value store in `.git/objects/`; every file, directory, commit, and tag is stored as a zlib-compressed object keyed by its SHA-1 content hash.
-- **Blob**: stores raw file bytes; keyed by content — two files with identical bytes share one blob.
-- **Tree**: stores a directory listing; maps filenames to blob or sub-tree SHA-1s.
+- **Version control**: tracks every change to every file over time; lets you restore any past state, collaborate without overwriting each other, and experiment in isolation.
+- **Distributed VCS**: every developer holds a complete, independent copy of the repository including full history — no single point of failure; most operations are local.
+- **Three-area model**: working directory (files on disk) → staging area/index (`.git/index`) → local repository (`.git/objects/`); `git add` moves to staging, `git commit` moves to repo, `git push` sends to remote.
+- **Staging area (index)**: the intermediate holding space that lets you craft precise commits — choose exactly which changes (even individual hunks with `git add -p`) go into each commit.
+- **`git restore`**: `git restore <file>` discards working directory changes; `git restore --staged <file>` unstages without losing changes — confusing these two causes accidental work loss.
+- **`git reset` modes**: `--soft` moves HEAD only; `--mixed` (default) also clears staging; `--hard` also discards working directory — never use `--hard` unless you're sure, and check `git reflog` if you do.
+- **`git reflog`**: records every HEAD movement; lets you recover "lost" commits after a `reset --hard` for up to 90 days by default.
+- **Conventional Commits**: structured message format `<type>(<scope>): <subject>` (`feat`, `fix`, `chore`, `refactor`, `docs`, `test`) — enables automated changelogs and semantic versioning.
 - **Commit**: stores a root tree pointer, zero or more parent commit SHA-1s, author/committer info, and message; immutable.
 - **Tag (annotated)**: a full Git object with tagger name, date, and message; points to a commit; preferred for release markers.
 - **Content-addressable**: the object's key (SHA-1) is derived from its content — changing any byte produces a different key; this makes history tamper-evident.
@@ -42,16 +47,33 @@ last_updated: 2026-03-08
 - **Git hook**: an executable script in `.git/hooks/` that Git runs at a specific lifecycle point; `pre-commit` and `commit-msg` are client-side; `pre-receive` is server-side.
 - **`core.hooksPath`**: Git config key (since v2.9) that redirects hook resolution to a committed directory (e.g., `.githooks/`), enabling team-wide shared hooks.
 - **Shallow clone (`--depth=N`)**: downloads only N commits; smaller and faster for CI pipelines; loses `bisect`, `blame`, and full `merge-base` capability.
-- **`git reflog`**: records every HEAD movement; lets you recover "lost" commits after a `reset --hard` for up to 90 days by default.
 
 ---
 
 ## Quick-Reference Table
 
-### Git Commands
+### Core Commands (Basics)
 
 | Command | Purpose | Key Note |
-|---------|---------|---------|
+|---------|---------|----------|
+| `git init` | Initialize a new repository | Creates `.git/` directory |
+| `git clone <url>` | Clone a remote repo locally | Creates `origin` remote automatically |
+| `git status` | Show working tree and staging state | Tells you which area each file is in |
+| `git add -p <file>` | Stage hunks interactively | Craft precise commits; avoid `git add .` blindly |
+| `git commit -m "msg"` | Create commit from staged changes | Follow Conventional Commits format |
+| `git diff` | Unstaged changes (working dir vs. index) | Shows what `git add` would stage |
+| `git diff --staged` | Staged changes (index vs. last commit) | Shows what `git commit` would record |
+| `git restore <file>` | Discard working directory changes | Destructive — changes gone |
+| `git restore --staged <file>` | Unstage a file | Changes preserved in working dir |
+| `git reset --soft/mixed/hard` | Move HEAD + optionally clear index/working dir | `--hard` is destructive; check `reflog` to undo |
+| `git revert <sha>` | Undo a commit by creating a new one | Safe for pushed/shared branches |
+| `git stash push -u -m "desc"` | Stash uncommitted work + untracked files | `git stash pop` to reapply |
+| `git log --oneline --graph --all` | Visual commit graph | Add `--decorate` for branch/tag labels |
+
+### Advanced Commands
+
+| Command | Purpose | Key Note |
+|---------|---------|----------|
 | `git cat-file -p <sha1>` | Pretty-print any Git object | Use to explore blobs, trees, commits |
 | `git log --oneline --graph --all` | Visual commit graph | Add `--decorate` for branch/tag labels |
 | `git fetch --prune` | Download remote changes + clean stale tracking refs | Set `fetch.prune=true` globally |
@@ -93,12 +115,13 @@ last_updated: 2026-03-08
 
 Suggested reading order for a returning Java developer:
 
-1. [Git Object Model](../version-control/git-object-model.md) — start here; understanding SHA-1 content addressing makes every other Git command intuitive.
-2. [Working with Remotes](../version-control/working-with-remotes.md) — fetch vs. pull, upstream tracking, fork workflows — the daily collaboration model.
-3. [Branching Strategies](../version-control/branching-strategies.md) — choose the model that matches your team's deploy frequency and CI/CD maturity.
-4. [Rebase vs. Merge](../version-control/rebase-vs-merge.md) — the most-debated Git topic; know both options and the Golden Rule.
-5. [Conflict Resolution](../version-control/conflict-resolution.md) — three-way merge, `rerere`, and tools to resolve conflicts efficiently.
-6. [Git Hooks & Workflows](../version-control/git-hooks-workflows.md) — automate quality gates locally before code reaches CI.
+1. [Git Basics](../version-control/git-basics.md) — start here; the three-area model, core commands (add/commit/restore/stash), and the daily workflow. If you know these, skim for gaps.
+2. [Git Object Model](../version-control/git-object-model.md) — start here; understanding SHA-1 content addressing makes every other Git command intuitive.
+3. [Working with Remotes](../version-control/working-with-remotes.md) — fetch vs. pull, upstream tracking, fork workflows — the daily collaboration model.
+4. [Branching Strategies](../version-control/branching-strategies.md) — choose the model that matches your team's deploy frequency and CI/CD maturity.
+5. [Rebase vs. Merge](../version-control/rebase-vs-merge.md) — the most-debated Git topic; know both options and the Golden Rule.
+6. [Conflict Resolution](../version-control/conflict-resolution.md) — three-way merge, `rerere`, and tools to resolve conflicts efficiently.
+7. [Git Hooks & Workflows](../version-control/git-hooks-workflows.md) — automate quality gates locally before code reaches CI.
 
 ---
 
@@ -125,6 +148,7 @@ Suggested reading order for a returning Java developer:
 
 | Note | Description |
 |------|-------------|
+| [Git Basics](../version-control/git-basics.md) | Three-area model, core commands, branching basics, `.gitignore`, and the daily workflow from init to push. |
 | [Git Object Model](../version-control/git-object-model.md) | Blobs, trees, commits, tags — how Git stores every snapshot as content-addressable objects. |
 | [Branching Strategies](../version-control/branching-strategies.md) | Git Flow, GitHub Flow, and trunk-based development — choosing the model that fits your team. |
 | [Rebase vs. Merge](../version-control/rebase-vs-merge.md) | When to use each, interactive rebase for clean PRs, and the Golden Rule you must never break. |

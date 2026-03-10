@@ -1,14 +1,14 @@
 ---
 id: version-control-interview-prep
 title: Version Control Interview Questions
-description: Consolidated interview Q&A for Git and version control covering beginner through advanced topics — object model, branching, rebase, remotes, conflict resolution, and hooks.
+description: Consolidated interview Q&A for Git and version control covering beginner through advanced topics — Git basics, three-area model, object model, branching, rebase, remotes, conflict resolution, and hooks.
 sidebar_position: 17
 tags:
   - interview-prep
   - java
   - git
   - version-control
-last_updated: 2026-03-08
+last_updated: 2026-03-10
 ---
 
 # Version Control Interview Questions
@@ -56,6 +56,18 @@ Detached HEAD means HEAD points directly to a commit SHA-1 instead of a branch n
 ### Q: What is `.gitignore`?
 
 `.gitignore` is a text file at the root of a repository that lists patterns for files and directories Git should never track. Common examples: `target/` (Maven build output), `*.class` (compiled Java files), `.env` (environment secrets). Already-tracked files are not affected by adding them to `.gitignore` — they must be explicitly removed from tracking with `git rm --cached <file>`.
+
+### Q: What are the three areas in Git and what moves data between them?
+
+The three areas are: **working directory** (files on disk you are actively editing), **staging area / index** (`.git/index` — the exact snapshot that will become the next commit), and **local repository** (`.git/objects/` — all commit history). `git add` promotes changes from the working directory to the staging area. `git commit` creates a new commit from the staging area into the repository. `git restore <file>` moves from the repository back to the working directory, discarding changes. A fourth area, the **remote**, is connected via `git push` and `git fetch`.
+
+### Q: What is the difference between `git diff` and `git diff --staged`?
+
+`git diff` (no flags) shows unstaged changes — the difference between the working directory and the staging area (index). `git diff --staged` (also `--cached`) shows staged changes — the difference between the staging area and the last commit. This is exactly what `git commit` would record. Together they let you audit both "what I've changed but not yet staged" and "what I've staged and am about to commit."
+
+### Q: How do you undo a `git add` before committing?
+
+Use `git restore --staged <file>`. This moves the file from the staging area back to the working directory — the changes are preserved on disk, they're just no longer queued for the next commit. The older equivalent is `git reset HEAD <file>`, which still works but `git restore --staged` is the modern, semantically clearer form.
 
 ---
 
@@ -110,6 +122,19 @@ A Git hook is an executable script in `.git/hooks/` that Git runs automatically 
 ### Q: What is `git stash` and when would you use it?
 
 `git stash` saves uncommitted changes (both staged and unstaged) onto a stack and reverts the working tree to the last commit. It's used when you need to quickly switch branches to fix a bug without committing half-finished work. `git stash pop` reapplies the saved changes. `git stash list` shows all saved stashes. Use `git stash push -u -m "description"` to also stash untracked files and add a descriptive message.
+
+### Q: What is the difference between `git reset --soft`, `--mixed`, and `--hard`?
+
+All three move the current branch pointer backward to the specified commit. They differ in what happens to staged and working directory changes:
+- `--soft`: moves HEAD only; the index (staged changes) and working directory are untouched — everything appears staged and ready to recommit.
+- `--mixed` (default, no flag): moves HEAD and also clears the staging area; working directory changes are preserved but unstaged.
+- `--hard`: moves HEAD, clears the index, AND discards all working directory changes — permanently destructive; run `git reflog` immediately if you did this unintentionally.
+
+Use `--soft` to undo the last commit while keeping work staged (e.g., to rewrite the commit message or split into multiple commits). Use `--mixed` to squash several commits by resetting to an older point and re-committing. Never use `--hard` on shared branches — it discards uncommitted work with no recovery path except `git reflog`.
+
+### Q: What is the difference between `git revert` and `git reset`?
+
+`git revert <sha>` creates a **new commit** that applies the inverse of a specific commit's changes, leaving history intact. It is safe on shared/pushed branches because it only adds commits. `git reset` moves the branch pointer backward, rewriting or discarding history — only safe on local, un-pushed branches. When you need to undo a change that has already been pushed, always use `git revert`.
 
 ---
 

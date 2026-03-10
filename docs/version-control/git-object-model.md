@@ -2,7 +2,7 @@
 id: git-object-model
 title: Git Object Model
 description: How Git stores every file, directory, and commit as content-addressable objects — blobs, trees, commits, and tags — and why this design makes Git so powerful and reliable.
-sidebar_position: 2
+sidebar_position: 3
 tags:
   - java
   - beginner
