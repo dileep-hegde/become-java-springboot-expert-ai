@@ -114,3 +114,8 @@ code {
 .menu__list .hidden {
   display: none;
 }
+
+blockquote {
+  border-left: none;
+  padding: 0;
+}
