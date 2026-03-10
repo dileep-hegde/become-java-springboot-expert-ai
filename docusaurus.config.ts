@@ -36,6 +36,7 @@ const config: Config = {
       'classic',
       {
         docs: {
+          breadcrumbs: false,
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/dileep-hegde/become-java-springboot-expert-ai/edit/main/',
           showLastUpdateTime: true,
@@ -67,11 +68,12 @@ const config: Config = {
   ],
 
   themeConfig: {
-    docs: {
+    docs: {    
       sidebar: {
         hideable: true,
+        autoCollapseCategories: true,        
       },
-    },
+    },        
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
       respectPrefersColorScheme: true,
