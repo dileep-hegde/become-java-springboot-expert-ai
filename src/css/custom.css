@@ -255,32 +255,6 @@ code {
   position: relative;
 }
 
-.theme-code-block::before {
-  content: attr(data-language);
-  position: absolute;
-  top: 8px;
-  right: 96px;
-  font-size: 10px;
-  padding: 2px 7px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  font-family: var(--ifm-font-family-monospace);
-  z-index: 1;
-  opacity: 0.75;
-  pointer-events: none;
-}
-
-[data-theme='dark'] .theme-code-block::before {
-  background: #3c3c3c;
-  color: #9cdcfe;
-}
-
-[data-theme='light'] .theme-code-block::before {
-  background: #e5e7eb;
-  color: #374151;
-}
 
 
 
