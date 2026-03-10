@@ -4,7 +4,7 @@
   position: relative;
   padding: 5.5rem 0 4.5rem;
   overflow: hidden;
-  background: #090e1a;
+  background: #1e1e1e;
   min-height: 520px;
   display: flex;
   align-items: center;
@@ -14,9 +14,9 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 55% at 50% -5%, rgba(13, 148, 136, 0.28) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 85% 90%, rgba(99, 102, 241, 0.18) 0%, transparent 55%),
-    linear-gradient(180deg, #090e1a 0%, #0c1525 100%);
+    radial-gradient(ellipse 80% 55% at 50% -5%, rgba(79, 209, 197, 0.13) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 85% 90%, rgba(129, 140, 248, 0.09) 0%, transparent 55%),
+    linear-gradient(180deg, #1e1e1e 0%, #252526 100%);
 }
 
 .heroGrid {
@@ -36,7 +36,7 @@
   transform: translateX(-50%);
   width: 700px;
   height: 450px;
-  background: radial-gradient(ellipse, rgba(13, 148, 136, 0.35) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(79, 209, 197, 0.18) 0%, transparent 70%);
   filter: blur(48px);
   animation: heroGlowPulse 5s ease-in-out infinite;
 }
@@ -49,69 +49,98 @@
 .heroContent {
   position: relative;
   z-index: 1;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.heroLeft {
+  text-align: left;
+}
+
+.heroRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .heroBadge {
-  display: inline-block;
-  padding: 0.4rem 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
   border-radius: 999px;
-  border: 1px solid rgba(45, 212, 191, 0.4);
-  background: rgba(13, 148, 136, 0.12);
-  color: #5eead4;
-  font-size: 0.82rem;
+  border: 1px solid rgba(79, 209, 197, 0.3);
+  background: rgba(79, 209, 197, 0.07);
+  color: #4fd1c5;
+  font-size: 0.78rem;
   font-weight: 500;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.06em;
   margin-bottom: 1.75rem;
-  backdrop-filter: blur(6px);
+  font-family: 'Consolas', 'Courier New', monospace;
+}
+
+.badgeDot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #27c93f;
+  flex-shrink: 0;
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
 }
 
 .heroTitle {
-  font-size: clamp(2.6rem, 6.5vw, 4.2rem);
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
   font-weight: 800;
-  color: #f1f5f9;
+  color: #ffffff;
   line-height: 1.1;
   margin-bottom: 1.5rem;
   letter-spacing: -0.025em;
 }
 
 .heroAccent {
-  background: linear-gradient(135deg, #2dd4bf 0%, #818cf8 100%);
+  background: linear-gradient(135deg, #4fd1c5 0%, #818cf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .heroSubtitle {
-  font-size: 1.15rem;
-  color: #94a3b8;
-  max-width: 580px;
-  margin: 0 auto 2.75rem;
-  line-height: 1.75;
+  font-size: 1.1rem;
+  color: #a0aec0;
+  max-width: 520px;
+  margin: 0 0 2.75rem;
+  line-height: 1.8;
 }
 
 .heroButtons {
   display: flex;
   gap: 1rem;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
 .btnPrimary {
-  background: linear-gradient(135deg, #0d9488 0%, #0369a1 100%);
+  background: linear-gradient(135deg, #4fd1c5 0%, #818cf8 100%);
   border: none;
-  color: #fff !important;
-  font-weight: 600;
+  color: #1e1e1e !important;
+  font-weight: 700;
   border-radius: 8px;
-  box-shadow: 0 4px 28px rgba(13, 148, 136, 0.4);
+  box-shadow: 0 4px 24px rgba(79, 209, 197, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-decoration: none !important;
 }
 
 .btnPrimary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 36px rgba(13, 148, 136, 0.55);
-  color: #fff !important;
+  box-shadow: 0 8px 36px rgba(79, 209, 197, 0.5);
+  color: #1e1e1e !important;
   text-decoration: none !important;
 }
 
@@ -355,9 +384,148 @@
   margin: 0;
 }
 
+/* ─── Code Window ────────────────────────────────────────────────────── */
+
+.codeWindow {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.78rem;
+  line-height: 1.65;
+  width: 100%;
+  max-width: 430px;
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(79, 209, 197, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  animation: floatCode 6s ease-in-out infinite;
+}
+
+@keyframes floatCode {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.codeWindowBar {
+  background: #252526;
+  border-bottom: 1px solid #333;
+  padding: 0.5rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dotRed {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ff5f56;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.dotYellow {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ffbd2e;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.dotGreen {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #27c93f;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.codeWindowTab {
+  margin-left: 0.75rem;
+  font-size: 0.72rem;
+  color: #9cdcfe;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+}
+
+.codeBody {
+  padding: 0.7rem 0;
+  background: #1e1e1e;
+}
+
+.codeLine {
+  display: flex;
+  padding: 0.02rem 0.9rem;
+  min-height: 1.4rem;
+}
+
+.codeLine:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.lineNum {
+  color: #555a6f;
+  min-width: 1.6rem;
+  text-align: right;
+  margin-right: 1.25rem;
+  font-size: 0.72rem;
+  line-height: 1.65;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.lineCode {
+  flex: 1;
+  white-space: pre;
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.85em;
+  background: #4fd1c5;
+  margin-left: 1px;
+  vertical-align: middle;
+  animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 /* ─── Responsive ─────────────────────────────────────────────────────── */
 
 @media (max-width: 996px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .heroLeft {
+    text-align: center;
+  }
+
+  .heroRight {
+    display: none;
+  }
+
+  .heroSubtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroButtons {
+    justify-content: center;
+  }
+
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -377,7 +545,7 @@
   }
 
   .heroTitle {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
 
   .domainsGrid {

@@ -52,6 +52,91 @@ const PHILOSOPHY = [
   },
 ];
 
+type CodePart = {text: string; color: string};
+type CodeLine = {parts: CodePart[]};
+
+const CODE_SNIPPET: CodeLine[] = [
+  {parts: [{text: '@RestController', color: '#4ec9b0'}]},
+  {parts: [
+    {text: '@RequestMapping', color: '#4ec9b0'},
+    {text: '(', color: '#d4d4d4'},
+    {text: '"/api"', color: '#ce9178'},
+    {text: ')', color: '#d4d4d4'},
+  ]},
+  {parts: [
+    {text: 'public', color: '#569cd6'},
+    {text: ' class ', color: '#d4d4d4'},
+    {text: 'UserController', color: '#4ec9b0'},
+    {text: ' {', color: '#d4d4d4'},
+  ]},
+  {parts: [{text: '', color: '#d4d4d4'}]},
+  {parts: [
+    {text: '  ', color: '#d4d4d4'},
+    {text: '@Autowired', color: '#4ec9b0'},
+  ]},
+  {parts: [
+    {text: '  private ', color: '#569cd6'},
+    {text: 'UserService ', color: '#4ec9b0'},
+    {text: 'userService;', color: '#d4d4d4'},
+  ]},
+  {parts: [{text: '', color: '#d4d4d4'}]},
+  {parts: [
+    {text: '  ', color: '#d4d4d4'},
+    {text: '@GetMapping', color: '#4ec9b0'},
+    {text: '(', color: '#d4d4d4'},
+    {text: '"/users"', color: '#ce9178'},
+    {text: ')', color: '#d4d4d4'},
+  ]},
+  {parts: [
+    {text: '  public ', color: '#569cd6'},
+    {text: 'List', color: '#4ec9b0'},
+    {text: '<', color: '#d4d4d4'},
+    {text: 'User', color: '#4ec9b0'},
+    {text: '> ', color: '#d4d4d4'},
+    {text: 'getAll', color: '#dcdcaa'},
+    {text: '() {', color: '#d4d4d4'},
+  ]},
+  {parts: [
+    {text: '    ', color: '#d4d4d4'},
+    {text: '// returns all users', color: '#6a9955'},
+  ]},
+  {parts: [
+    {text: '    return ', color: '#569cd6'},
+    {text: 'userService', color: '#d4d4d4'},
+    {text: '.', color: '#d4d4d4'},
+    {text: 'findAll', color: '#dcdcaa'},
+    {text: '();', color: '#d4d4d4'},
+  ]},
+  {parts: [{text: '  }', color: '#d4d4d4'}]},
+  {parts: [{text: '}', color: '#d4d4d4'}]},
+];
+
+function CodeWindow(): ReactNode {
+  return (
+    <div className={styles.codeWindow}>
+      <div className={styles.codeWindowBar}>
+        <span className={styles.dotRed} />
+        <span className={styles.dotYellow} />
+        <span className={styles.dotGreen} />
+        <span className={styles.codeWindowTab}>UserController.java</span>
+      </div>
+      <div className={styles.codeBody}>
+        {CODE_SNIPPET.map((line, i) => (
+          <div key={i} className={styles.codeLine}>
+            <span className={styles.lineNum}>{i + 1}</span>
+            <span className={styles.lineCode}>
+              {line.parts.map((part, j) => (
+                <span key={j} style={{color: part.color}}>{part.text}</span>
+              ))}
+              {i === CODE_SNIPPET.length - 1 && <span className={styles.cursor} />}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function HeroSection(): ReactNode {
   return (
     <section className={styles.hero}>
@@ -60,21 +145,30 @@ function HeroSection(): ReactNode {
         <div className={styles.heroGrid} />
       </div>
       <div className={clsx('container', styles.heroContent)}>
-        <span className={styles.heroBadge}>☕ Java &amp; Spring Boot Knowledge Base</span>
-        <Heading as="h1" className={styles.heroTitle}>
-          Become a <span className={styles.heroAccent}>Java Expert</span>
-        </Heading>
-        <p className={styles.heroSubtitle}>
-          A structured, interview-ready knowledge base for Java backend engineers.
-          Built from first principles — from core Java to cloud-native Spring Boot.
-        </p>
-        <div className={styles.heroButtons}>
-          <Link className={clsx('button button--lg', styles.btnPrimary)} to="/docs/overviews/">
-            Start Learning →
-          </Link>
-          <Link className={clsx('button button--lg', styles.btnGhost)} to="/docs/interview-prep/">
-            Interview Prep
-          </Link>
+        <div className={styles.heroLeft}>
+          <span className={styles.heroBadge}>
+            <span className={styles.badgeDot} />
+            Java · Spring · Cloud
+          </span>
+          <Heading as="h1" className={styles.heroTitle}>
+            Master <span className={styles.heroAccent}>Java Backend</span>{' '}
+            Engineering
+          </Heading>
+          <p className={styles.heroSubtitle}>
+            A structured, interview-ready knowledge base for Java backend engineers.
+            Built from first principles — core Java to cloud-native Spring Boot.
+          </p>
+          <div className={styles.heroButtons}>
+            <Link className={clsx('button button--lg', styles.btnPrimary)} to="/docs/overviews/">
+              Start Learning →
+            </Link>
+            <Link className={clsx('button button--lg', styles.btnGhost)} to="/docs/interview-prep/">
+              Interview Prep
+            </Link>
+          </div>
+        </div>
+        <div className={styles.heroRight}>
+          <CodeWindow />
         </div>
       </div>
     </section>
