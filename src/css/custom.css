@@ -354,6 +354,75 @@ code {
   margin-bottom: 0;
 }
 
+/* Code inside admonitions: transparent background and accent-colored text */
+.alert code,
+.admonition-note code,
+.admonition-tip code,
+.admonition-info code,
+.admonition-warning code,
+.admonition-caution code,
+.admonition-danger code {
+  background: transparent !important;
+  padding: 0.12em 0.32em;
+  border-radius: 4px;
+  border: none !important;
+  font-weight: 600;
+}
+
+/* Match code color to each admonition's accent */
+.alert--secondary code,
+.admonition-note code {
+  color: #818cf8;
+}
+
+.alert--success code,
+.admonition-tip code {
+  color: var(--ifm-color-primary);
+}
+
+.alert--info code,
+.admonition-info code {
+  color: #38bdf8;
+}
+
+.alert--warning code,
+.admonition-warning code,
+.admonition-caution code {
+  color: #f59e0b;
+}
+
+.alert--danger code,
+.admonition-danger code {
+  color: #ef4444;
+}
+
+/* Dark-theme tweaks (use theme-appropriate accents) */
+[data-theme='dark'] .alert--secondary code,
+[data-theme='dark'] .admonition-note code {
+  color: #818cf8;
+}
+
+[data-theme='dark'] .alert--success code,
+[data-theme='dark'] .admonition-tip code {
+  color: #4fd1c5;
+}
+
+[data-theme='dark'] .alert--info code,
+[data-theme='dark'] .admonition-info code {
+  color: #38bdf8;
+}
+
+[data-theme='dark'] .alert--warning code,
+[data-theme='dark'] .admonition-warning code,
+[data-theme='dark'] .admonition-caution code {
+  color: #fbbf24;
+}
+
+[data-theme='dark'] .alert--danger code,
+[data-theme='dark'] .admonition-danger code {
+  color: #f87171;
+}
+
 
 
 /* ---------------------------------------------------------
@@ -392,6 +461,53 @@ table {
   border-top: 1px solid var(--ifm-color-emphasis-200);
   padding-top: 8px;
   padding-bottom: 8px;
+}
+.footer {
+  /* Match navbar dark background */
+  background: #252526;
+  color: var(--ifm-font-color-base, #d4d4d4);
+  padding: 1rem 0.75rem;
+  border-top: 1px solid #333;
+}
+
+/* Keep footer dark even in light theme so it matches the navbar */
+[data-theme='light'] .footer {
+  background: #252526;
+  color: var(--ifm-font-color-base, #d4d4d4);
+}
+
+[data-theme='dark'] .footer {
+  background: #252526;
+  color: var(--ifm-font-color-base, #d4d4d4);
+}
+
+.footer a {
+  color: inherit;
+  opacity: 0.9;
+}
+
+/* Navbar GitHub icon */
+.navbar-github-link {
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+  background-image: url('/img/github.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+  color: var(--ifm-font-color-base);
+  opacity: 0.9;
+  margin-right: 8px;
+}
+
+.navbar-github-link:hover {
+  opacity: 1;
+}
+
+[data-theme='dark'] .navbar-github-link {
+  color: var(--ifm-color-primary-lightest);
+  /* Use white icon on dark theme */
+  background-image: url('/img/github-white.svg');
 }
 
 

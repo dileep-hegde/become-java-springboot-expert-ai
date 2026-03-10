@@ -109,8 +109,9 @@ const config: Config = {
         },
         {
           href: 'https://github.com/dileep-hegde/become-java-springboot-expert-ai',
-          label: 'GitHub',
           position: 'right',
+          className: 'navbar-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
