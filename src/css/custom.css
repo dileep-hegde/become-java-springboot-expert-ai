@@ -13,6 +13,9 @@
 
   /* Accent color (teal developer theme) */
   --ifm-color-primary: #0ea5a4;
+
+  /* Mermaid */
+  --mermaid-font-family: var(--ifm-font-family-base);
   --ifm-color-primary-dark: #0d9488;
   --ifm-color-primary-darker: #0f766e;
   --ifm-color-primary-darkest: #115e59;
@@ -45,6 +48,9 @@
 
   /* VSCode backgrounds */
   --ifm-background-color: #1e1e1e;
+
+  /* Mermaid dark theme */
+  --mermaid-theme: dark;
   --ifm-background-surface-color: #252526;
   --ifm-footer-background-color: #181818;
 
@@ -170,9 +176,208 @@ code {
    Mermaid Diagrams
 --------------------------------------------------------- */
 
+/* ---------------------------------------------------------
+   Code title / line-number visual fixes
+   (normalize background + remove blocky panels that clash)
+--------------------------------------------------------- */
+
+/* Title shown above code samples (module class names vary; use attribute contains) */
+[class*="codeBlockTitle"] {
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  padding: 0.55rem 0.9rem;
+  font-size: 0.92rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  border-radius: 6px 6px 0 0;
+}
+
+/* Container that wraps the code content (remove double-panels) */
+[class*="codeBlockContent"] {
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+/* Prism line numbers — make them subtle and integrated */
+[class*="codeLineNumber"],
+[class*="lineNumber"],
+[class*="codeLineNumbers"] {
+  background: transparent !important;
+  color: rgba(156,163,175,1) !important; /* muted slate */
+  padding-right: 0.9rem;
+  text-align: right;
+  border-right: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Ensure the pre block uses the surface background for consistency */
+.prism-code, pre.prism-code, pre[class*="prism-code"] {
+  background: var(--ifm-background-surface-color) !important;
+  border: none !important;
+}
+
+/* Slight fade behind lines on hover for readability */
+.prism-code .token-line:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+/* ---------------------------------------------------------
+   Mermaid Diagrams
+--------------------------------------------------------- */
+
+.mermaid {
+  margin: 1.5rem 0;
+}
+
 [data-theme='dark'] .mermaid {
-  background: #1e1e1e;
+  background: #252526;
   border-radius: 8px;
+  border: 1px solid #333;
+  padding: 1.25rem;
+}
+
+[data-theme='dark'] .mermaid svg {
+  font-family: var(--ifm-font-family-base);
+}
+
+[data-theme='light'] .mermaid {
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 1.25rem;
+}
+
+
+
+/* ---------------------------------------------------------
+   Code Block Language Labels
+--------------------------------------------------------- */
+
+.theme-code-block {
+  position: relative;
+}
+
+.theme-code-block::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 8px;
+  right: 96px;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-family: var(--ifm-font-family-monospace);
+  z-index: 1;
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+[data-theme='dark'] .theme-code-block::before {
+  background: #3c3c3c;
+  color: #9cdcfe;
+}
+
+[data-theme='light'] .theme-code-block::before {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+
+
+/* ---------------------------------------------------------
+   Admonitions (Spring / Stripe style callouts)
+--------------------------------------------------------- */
+
+.alert {
+  border-radius: 8px;
+  border-left-width: 4px !important;
+  border-left-style: solid !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+/* NOTE - slate blue */
+.alert--secondary,
+.admonition-note {
+  background: rgba(99, 102, 241, 0.06) !important;
+  border-left-color: #818cf8 !important;
+}
+
+[data-theme='dark'] .alert--secondary,
+[data-theme='dark'] .admonition-note {
+  background: rgba(129, 140, 248, 0.08) !important;
+}
+
+/* TIP - teal */
+.alert--success,
+.admonition-tip {
+  background: rgba(14, 165, 164, 0.06) !important;
+  border-left-color: var(--ifm-color-primary) !important;
+}
+
+[data-theme='dark'] .alert--success,
+[data-theme='dark'] .admonition-tip {
+  background: rgba(79, 209, 197, 0.08) !important;
+  border-left-color: #4fd1c5 !important;
+}
+
+/* INFO - sky blue */
+.alert--info,
+.admonition-info {
+  background: rgba(14, 116, 144, 0.06) !important;
+  border-left-color: #38bdf8 !important;
+}
+
+[data-theme='dark'] .alert--info,
+[data-theme='dark'] .admonition-info {
+  background: rgba(56, 189, 248, 0.08) !important;
+}
+
+/* WARNING - amber */
+.alert--warning,
+.admonition-warning,
+.admonition-caution {
+  background: rgba(245, 158, 11, 0.06) !important;
+  border-left-color: #f59e0b !important;
+}
+
+[data-theme='dark'] .alert--warning,
+[data-theme='dark'] .admonition-warning,
+[data-theme='dark'] .admonition-caution {
+  background: rgba(251, 191, 36, 0.08) !important;
+  border-left-color: #fbbf24 !important;
+}
+
+/* DANGER - red */
+.alert--danger,
+.admonition-danger {
+  background: rgba(220, 38, 38, 0.06) !important;
+  border-left-color: #ef4444 !important;
+}
+
+[data-theme='dark'] .alert--danger,
+[data-theme='dark'] .admonition-danger {
+  background: rgba(248, 113, 113, 0.08) !important;
+  border-left-color: #f87171 !important;
+}
+
+/* Icon + title row */
+.admonition-heading {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.admonition-content p:last-child {
+  margin-bottom: 0;
 }
 
 

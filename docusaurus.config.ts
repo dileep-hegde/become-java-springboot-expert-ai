@@ -122,7 +122,14 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.vsDark,
-      additionalLanguages: ['java', 'bash', 'yaml', 'json', 'markup'],
+      additionalLanguages: ['java', 'bash', 'yaml', 'json', 'markup', 'sql', 'docker'],
+    },
+    mermaid: {
+      theme: { light: 'default', dark: 'dark' },
+      options: {
+        fontFamily: 'var(--ifm-font-family-base)',
+        fontSize: 14,
+      },
     },
   } satisfies Preset.ThemeConfig,
 };
