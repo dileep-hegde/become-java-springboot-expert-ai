@@ -159,7 +159,7 @@ function HeroSection(): ReactNode {
             Built from first principles — core Java to cloud-native Spring Boot.
           </p>
           <div className={styles.heroButtons}>
-            <Link className={clsx('button button--lg', styles.btnPrimary)} to="/docs/overviews/">
+            <Link className={clsx('button button--lg', styles.btnPrimary)} to="/docs/">
               Start Learning →
             </Link>
             <Link className={clsx('button button--lg', styles.btnGhost)} to="/docs/interview-prep/">

@@ -102,10 +102,20 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'siteSidebar',
+          to: '/docs/overviews', 
+          label: 'Overviews', 
+          position: 'left'
+        },
+        {
+          to: '/docs',          
           position: 'left',
-          label: 'Docs',
+          label: 'References',
+          activeBaseRegex: '^/docs/?$',
+        },
+        {
+          to: '/docs/interview-prep',
+          position: 'left',
+          label: 'Interview Prep',
         },
         {
           href: 'https://github.com/dileep-hegde/become-java-springboot-expert-ai',
